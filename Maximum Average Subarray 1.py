@@ -21,6 +21,9 @@ class Solution(object):
                 sum -= nums[left]
                 left += 1
                 length -= 1
+            if right < k:
+                answer = sum / k
+                continue
             answer = max(answer, sum / k)
 
         return answer
@@ -39,5 +42,7 @@ if __name__ == '__main__':
     print(Solution().findMaxAverage([1,12,-5,-6,50,3], 4))
     print(Solution().findMaxAverage([5], 1))
     print(Solution().findMaxAverage([-1], 1))
+    print(Solution().findMaxAverage([4,0,4,3,3], 5))
+    print(Solution().findMaxAverage([0,4,0,3,2], 1)) # 4.0
 
 
