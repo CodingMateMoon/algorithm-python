@@ -6,8 +6,19 @@ class Solution(object):
     -104 <= nums[i] <= 104
     """
 
-
     def findMaxAverage(self, nums, k):
+        sum = 0.0
+        for i in range (k):
+            sum += nums[i]
+
+        result = sum
+        for i in range (k, len(nums)):
+            sum += nums[i] - nums[i - k]
+            result = max(result, sum)
+
+        return result / k
+
+    def findMaxAverage_2(self, nums, k):
 
         # Cumulative Sum
         sum = [0] * len(nums)
