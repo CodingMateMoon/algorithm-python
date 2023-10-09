@@ -11,20 +11,22 @@ class Solution:
     2. i번째 0부터 시작 j번째 0
     1,2,..k만큼 재귀호출 후 가장 길이가 긴 경우 구하기
     0을 k개만큼 허용하는 연속된 1 구하기
-    index 0부터 시작해서 0이 나올 경우 1로 변경하고 count++, count=k 됐을 때부터 다음에 나오는 값이 0일 경우 가장 첫번째 0의 index를 빼고 커서에 위치한 0의 index를 저장
+    index 0부터 시작해서 0이 나올 경우 1로 변경하고 count++, count=k 됐을 때부터 다음에 나오는 값이 0일 경우 zero_list에서 가장 첫번째 0의 index를 빼고 해당 index + 1을 startIndex로 설정
+    커서에 위치한 0의 index를 저장.
     """
 
     def longestOnes(self, nums: List[int], k: int) -> int:
-        count = 0
-        result = 0
+        count = length = result = 0
         zero_list = []
+        start_index = 0
         for i in len(nums):
             if i == 1:
+                length += 1
+                result = max(length, result)
+                continue
+            if count < k:
+                count += 1
                 result += 1
-            else:
-                if count < k:
-                    count += 1
-                    result += 1
 
 
 if __name__ == '__main__':
