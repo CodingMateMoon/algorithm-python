@@ -2,6 +2,14 @@ from typing import List
 class Solution:
 
     def minStartValue(self, nums: List[int]) -> int:
+
+        total = 0
+        startValue = 1
+        while True:
+            for num in nums:
+                startValue += num
+
+    def minStartValue_2(self, nums: List[int]) -> int:
         # We use "total" for current step-by-step total, "min_val" for minimum
         # step-by-step total among all sums. Since we always start with
         # startValue = 0, therefore the initial current step-by-step total is 0,
