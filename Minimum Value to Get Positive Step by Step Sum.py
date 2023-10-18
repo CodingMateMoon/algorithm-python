@@ -3,11 +3,21 @@ class Solution:
 
     def minStartValue(self, nums: List[int]) -> int:
 
-        total = 0
         startValue = 1
         while True:
+            isValid = True
+            total = startValue
             for num in nums:
-                startValue += num
+                total += num
+                if total < 1:
+                    startValue += 1
+                    isValid = False
+                    break
+            if isValid == True:
+                return startValue
+
+
+
 
     def minStartValue_2(self, nums: List[int]) -> int:
         # We use "total" for current step-by-step total, "min_val" for minimum
