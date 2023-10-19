@@ -1,7 +1,35 @@
 from typing import List
 class Solution:
 
+    """
+    1 <= nums.length <= 100
+    -100 <= nums[i] <= 100
+    Input: nums = [-3,2,-3,4,2]
+    Output: 5
+    Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.
+    step by step sum
+    startValue = 4 | startValue = 5 | nums
+  (4 -3 ) = 1  | (5 -3 ) = 2    |  -3
+  (1 +2 ) = 3  | (2 +2 ) = 4    |   2
+  (3 -3 ) = 0  | (4 -3 ) = 1    |  -3
+  (0 +4 ) = 4  | (1 +4 ) = 5    |   4
+  (4 +2 ) = 6  | (5 +2 ) = 7    |   2
+  left ~ right 합이 최소인 경우를 구하고 1보다 작을 경우 1이 되도록 만드는 값 x를 더해서 startValue를 구합니다.
+    """
     def minStartValue(self, nums: List[int]) -> int:
+
+        # start_value보다 작은 값과 큰 값 사이의 middle 구하고 이를 만족시키는 최소값 return
+        # 요소가 -100일 때 최대 100 + 1이 나와야 sum이 0보다 클 수 있습니다
+
+        m = 100
+        left = 1
+        right = m * len(nums) + 1
+
+        while left < right:
+            middle = (left + right) // 2
+
+
+    def minStartValue_3(self, nums: List[int]) -> int:
 
         startValue = 1
         while True:
@@ -36,21 +64,7 @@ class Solution:
         # by increasing the startValue from 0 to -min_val + 1,
         # which is just the minimum startValue we want.
         return -min_val + 1
-    """
-    1 <= nums.length <= 100
-    -100 <= nums[i] <= 100
-    Input: nums = [-3,2,-3,4,2]
-    Output: 5
-    Explanation: If you choose startValue = 4, in the third iteration your step by step sum is less than 1.
-    step by step sum
-    startValue = 4 | startValue = 5 | nums
-  (4 -3 ) = 1  | (5 -3 ) = 2    |  -3
-  (1 +2 ) = 3  | (2 +2 ) = 4    |   2
-  (3 -3 ) = 0  | (4 -3 ) = 1    |  -3
-  (0 +4 ) = 4  | (1 +4 ) = 5    |   4
-  (4 +2 ) = 6  | (5 +2 ) = 7    |   2
-  left ~ right 합이 최소인 경우를 구하고 1보다 작을 경우 1이 되도록 만드는 값 x를 더해서 startValue를 구합니다.
-    """
+
     def minStartValue_1(self, nums: List[int]) -> int:
         sum = nums[0]
         min_value = sum
