@@ -27,6 +27,20 @@ class Solution:
 
         while left < right:
             middle = (left + right) // 2
+            sum = middle
+            is_valid = True
+            for num in nums:
+                sum += num
+                if sum < 1:
+                    is_valid = False
+                    left = middle + 1
+                    break;
+
+            if is_valid:
+                right = middle
+
+        return left
+
 
 
     def minStartValue_3(self, nums: List[int]) -> int:
