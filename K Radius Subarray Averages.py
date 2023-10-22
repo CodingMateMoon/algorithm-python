@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
 
     """
@@ -14,10 +17,19 @@ Explanation:
     - For the subarray centered at index 4, avg[4] = (4 + 3 + 9 + 1 + 8 + 5 + 2) / 7 = 4.
     - For the subarray centered at index 5, avg[5] = (3 + 9 + 1 + 8 + 5 + 2 + 6) / 7 = 4.
     - avg[6], avg[7], and avg[8] are -1 because there are less than k elements after each index.
+
+    i = 3 -> total = 0~6 sum
+    i = 4 -> total = total - left[0] + right[7]
+    i = k -> total = total - left[i - k - 1] + right[i + k]
         """
     def getAverages(self, nums: List[int], k: int) -> List[int]:
 
+
+        answer = [0] * len(nums)
         for i in range(len(nums)):
+            if i < k:
+                answer[i] = 0
+                continue
 
 
 if __name__ == '__main__':
