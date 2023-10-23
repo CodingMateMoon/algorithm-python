@@ -24,11 +24,16 @@ Explanation:
         """
     def getAverages(self, nums: List[int], k: int) -> List[int]:
 
-
-        answer = [0] * len(nums)
-        for i in range(len(nums)):
-            if i < k:
-                answer[i] = 0
+        length = len(nums)
+        answer = [0] * length
+        total = 0
+        window = 2 * k + 1
+        if length <= window:
+            for i in range(window):
+                total += nums[i]
+        for i in range(length):
+            if i < k or length <= (i + k):
+                answer[i] = -1
                 continue
 
 
