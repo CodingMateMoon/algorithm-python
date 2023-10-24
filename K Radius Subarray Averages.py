@@ -26,16 +26,21 @@ Explanation:
 
         length = len(nums)
         answer = [0] * length
-        total = 0
-        window = 2 * k + 1
-        if length <= window:
-            for i in range(window):
+        left = total = 0
+        right = 2 * k
+        sub_length = 2 * k + 1
+        if sub_length <= length:
+            for i in range(sub_length):
                 total += nums[i]
         for i in range(length):
             if i < k or length <= (i + k):
                 answer[i] = -1
                 continue
-
+            if i > k:
+                right += 1
+                total = total - nums[left] + nums[right]
+                left += 1
+            answer[i] = total / k
 
 if __name__ == '__main__':
     print(Solution().getAverages([7,4,3,9,1,8,5,2,6]), 3)
