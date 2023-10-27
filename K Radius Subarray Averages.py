@@ -1,3 +1,4 @@
+import math
 from typing import List
 
 
@@ -33,6 +34,7 @@ Explanation:
             for i in range(sub_length):
                 total += nums[i]
         for i in range(length):
+            # length 9 case : i = 6, 6 + 3 = 9일때 최대 인덱스 8보다 더 커서 조건에 벗어납니다
             if i < k or length <= (i + k):
                 answer[i] = -1
                 continue
@@ -40,7 +42,9 @@ Explanation:
                 right += 1
                 total = total - nums[left] + nums[right]
                 left += 1
-            answer[i] = total / k
+            answer[i] = math.floor(total / sub_length)
+
+        return answer
 
 if __name__ == '__main__':
-    print(Solution().getAverages([7,4,3,9,1,8,5,2,6]), 3)
+    print(Solution().getAverages([7,4,3,9,1,8,5,2,6], 3) )
