@@ -1,4 +1,6 @@
-class Solution:
+import unittest
+
+class Solution(unittest.TestCase):
 
     """
     Example 1:
@@ -29,6 +31,15 @@ class Solution:
 
         return max_length if max_length < k else k
 
+    def test_maxVowels(self):
+        self.assertEqual(self.maxVowels("abciiidef", 3), 3)
+        self.assertEqual(self.maxVowels("aeiou", 2), 2)
+        self.assertEqual(self.maxVowels("leetcode", 3), 2)
+        #self.assertEqual(self.maxVowels("weallloveyou", 7), 4)
+
+def test_maxVowels():
+    solution = Solution()
+    assert solution.maxVowels("weallloveyou", 7) == 4
 
 if __name__ == '__main__':
     print(Solution().maxVowels("abciiidef", 3))
