@@ -21,21 +21,24 @@ class Solution(unittest.TestCase):
     """
     def maxVowels(self, s: str, k: int) -> int:
         vowel_letters = ['a', 'e', 'i', 'o', 'u']
-        left = max_length = 0
-        for right in range(len(s)):
-            if s[right] in vowel_letters:
+        left = max_length = length = 0
 
-                max_length = max(max_length, right - left + 1)
-                continue
-            left = right + 1
+        for i in range(k):
+            length += int(s[i] in vowel_letters)
+        max_length = length
 
-        return max_length if max_length < k else k
+        for right in range(k, len(s)):
+            length += int(s[right] in vowel_letters)
+            length -= int(s[right - k] in vowel_letters)
+            max_length = max(max_length, length)
+
+        return max_length
 
     def test_maxVowels(self):
         self.assertEqual(self.maxVowels("abciiidef", 3), 3)
         self.assertEqual(self.maxVowels("aeiou", 2), 2)
         self.assertEqual(self.maxVowels("leetcode", 3), 2)
-        #self.assertEqual(self.maxVowels("weallloveyou", 7), 4)
+        self.assertEqual(self.maxVowels("weallloveyou", 7), 4)
 
 def test_maxVowels():
     solution = Solution()
