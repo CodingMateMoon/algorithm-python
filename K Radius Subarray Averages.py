@@ -25,6 +25,29 @@ Explanation:
         """
 
     def getAverages(self, nums: List[int], k: int) -> List[int]:
+        length = len(nums)
+        averages = [-1] * length
+        window_sum = 0
+
+        if k == 0:
+            return nums
+        if 2 * k + 1 > length:
+            return averages
+        for i in range(2 * k + 1):
+            window_sum += nums[i]
+        #averages[k] = math.floor(window_sum / (2 * k + 1))
+        averages[k] = window_sum // (2 * k + 1)
+
+
+        for i in range(2 * k + 1, length):
+            window_sum = window_sum + nums[i] - nums[i - (2 * k + 1)]
+            averages[i - k] = math.floor(window_sum / (2 * k + 1))
+
+        return averages
+
+
+    def getAverages_2(self, nums: List[int], k: int) -> List[int]:
+
         # When a single element is considered then its average will be the number itself only.
         if k == 0:
             return nums
