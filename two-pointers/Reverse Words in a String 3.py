@@ -6,6 +6,12 @@ class Solution:
     """
     def reverseWords(self, s: str) -> str:
 
+        length = len(s)
+        for i in range(length):
+            if s[i] == ' ' or s[i] == length - 1:
+
+    def reverseWords_1(self, s: str) -> str:
+
         start_index = 0
         result = ""
         for i in range(len(s)):
