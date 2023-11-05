@@ -6,9 +6,25 @@ class Solution:
     """
     def reverseWords(self, s: str) -> str:
 
+        start_index = 0
+        string_list = []
         length = len(s)
         for i in range(length):
-            if s[i] == ' ' or s[i] == length - 1:
+            if s[i] == ' ':
+                for j in range(i, start_index, -1):
+                    string_list.append(s[j - 1])
+                string_list.append(' ')
+                start_index = i + 1
+            elif i == length - 1:
+                for j in range(i, start_index - 1, -1):
+                    string_list.append(s[j])
+        result = ''.join(string_list)
+        print(f"result : {result}")
+        return result
+
+
+
+
 
     def reverseWords_1(self, s: str) -> str:
 
