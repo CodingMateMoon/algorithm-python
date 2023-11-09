@@ -6,17 +6,20 @@ class Solution:
     """
     def reverseOnlyLetters(self, s: str) -> str:
 
-        start_index = 0
+        start_index = -1
         string_list = []
-        for i in range  (len(s)):
+        n = len(s)
+        current_index = n - 1
+        for i in range (n):
             if not s[i].isalpha():
-                for j in range(i - 1, start_index, -1):
-                    string_list.append(s[j])
+                if current_index < start_index:
+                    continue
+                if start_index == -1:
+                    start_index = i
                 string_list.append(s[i])
-                start_index = i + 1
-            elif i == len(s) - 1:
-                for j in range(i, start_index - 1, -1):
-                    string_list.append(s[j])
+            else:
+                string_list.append(s[current_index])
+            current_index -= 1
         result = ''.join(string_list)
         return result
 
