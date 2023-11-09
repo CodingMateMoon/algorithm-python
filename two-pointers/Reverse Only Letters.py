@@ -12,14 +12,14 @@ class Solution:
         current_index = n - 1
         for i in range (n):
             if not s[i].isalpha():
-                if current_index < start_index:
-                    continue
-                if start_index == -1:
-                    start_index = i
                 string_list.append(s[i])
             else:
+                while True:
+                    if s[current_index].isalpha() or current_index < 0:
+                        break
+                    current_index -=1
                 string_list.append(s[current_index])
-            current_index -= 1
+                current_index -= 1
         result = ''.join(string_list)
         return result
 
