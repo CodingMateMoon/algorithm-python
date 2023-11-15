@@ -13,15 +13,25 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         left = 0
-        right = len(nums) - 1
-        for i in nums:
+
+        end = right = len(nums) - 1
+        for i in range (0, len(nums)):
             if nums[i] == 0:
+                if right <= i:
+                    continue
+                for j in range(i + 1, len(nums)):
+                    nums[i] = nums[j]
+                nums[end] = 0
+                right -= 1
 
 
 
 
         return nums
 
+"""
+1,
+"""
 def test_moveZeroes():
     solution = Solution()
     assert solution.moveZeroes([0, 1, 0, 3, 12]) == [1, 3, 12, 0, 0]
