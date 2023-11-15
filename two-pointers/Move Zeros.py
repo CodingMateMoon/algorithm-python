@@ -6,11 +6,20 @@ class Solution:
     1 <= nums.length <= 104
     -231 <= nums[i] <= 231 - 1
     0을 제외한 나머지 숫자에 대해 리스트를 만들고 0의 개수를 센 뒤에 뒤에 덧붙입니다
+    0이 나온 경우 right(length - 1)에 추가
     """
     def moveZeroes(self, nums: List[int]) -> List[int]:
         """
         Do not return anything, modify nums in-place instead.
         """
+        left = 0
+        right = len(nums) - 1
+        for i in nums:
+            if nums[i] == 0:
+
+
+
+
         return nums
 
 def test_moveZeroes():
