@@ -12,21 +12,13 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        left = 0
-
-        end = right = len(nums) - 1
-        for i in range (0, len(nums)):
-            if nums[i] == 0:
-                if right <= i:
-                    continue
-                for j in range(i + 1, len(nums)):
-                    nums[i] = nums[j]
-                nums[end] = 0
-                right -= 1
-
-
-
-
+        non_zero_count = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[non_zero_count] = nums[i]
+                non_zero_count += 1
+        for i in range(non_zero_count, len(nums)):
+            nums[i] = 0
         return nums
 
 """
