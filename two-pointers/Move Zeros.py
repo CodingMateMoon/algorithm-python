@@ -9,6 +9,26 @@ class Solution:
     0이 나온 경우 right(length - 1)에 추가
     """
     def moveZeroes(self, nums: List[int]) -> List[int]:
+        zero_count = 0
+
+        for num in nums:
+            zero_count += (num == 0)
+        answer = []
+
+        for num in nums:
+            if num != 0:
+                print(f"num : {num}")
+                answer.append(num)
+
+        for num in answer:
+            print(num)
+
+        for i in range(zero_count):
+            answer.append(0)
+
+        return nums
+
+    def moveZeroes_1(self, nums: List[int]) -> List[int]:
         """
         Do not return anything, modify nums in-place instead.
         """
