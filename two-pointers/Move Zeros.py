@@ -9,6 +9,19 @@ class Solution:
     0이 나온 경우 right(length - 1)에 추가
     """
     def moveZeroes(self, nums: List[int]) -> List[int]:
+        # 0이 아닌 값이 나올 경우 last_non_zero_index++
+
+        last_non_zero_index = -1
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                last_non_zero_index += 1
+                temp = nums[last_non_zero_index]
+                nums[last_non_zero_index] = nums[i]
+                nums[i] = temp
+
+        return nums
+
+    def moveZeroes_2(self, nums: List[int]) -> List[int]:
         zero_count = 0
 
         for num in nums:
@@ -26,7 +39,7 @@ class Solution:
         for i in range(zero_count):
             answer.append(0)
 
-        return nums
+        return answer
 
     def moveZeroes_1(self, nums: List[int]) -> List[int]:
         """
