@@ -6,17 +6,16 @@ class Solution:
     def reversePrefix(self, word: str, ch: str) -> str:
 
         left = 0
+        answer = [char for char in word]
 
         for i in range (len(word)):
             if word[i] == ch:
                 temp = []
                 for j in range(left, i):
                     temp.append(word[j])
-
-
-
-
-        return "dcbaefd"
+                for j in range(left, i):
+                    answer[j] = temp.pop()
+        return ''.join(answer)
 def test_reversePrefix():
     solution = Solution()
     assert solution.reversePrefix("abcdefd", "d") == "dcbaefd"
