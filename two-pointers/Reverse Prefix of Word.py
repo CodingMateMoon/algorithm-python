@@ -11,10 +11,12 @@ class Solution:
         for i in range (len(word)):
             if word[i] == ch:
                 temp = []
-                for j in range(left, i):
+                for j in range(left, i + 1):
                     temp.append(word[j])
-                for j in range(left, i):
+                print(f"temp : {temp}")
+                for j in range(left, i + 1):
                     answer[j] = temp.pop()
+                break
         return ''.join(answer)
 def test_reversePrefix():
     solution = Solution()
