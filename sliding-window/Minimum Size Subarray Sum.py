@@ -3,6 +3,10 @@ class Solution:
     """
     부분 집합의 합 중 target보다 크거나 같은 최소 길이의 부분 집합을 구합니다
     앞에서 부분 집합의 합 중 target이상인 값이 나와도 더 길이가 작은 부분 집합이 뒤에 있을 수 있습니다 ex) 2 + 3 + 1 + 2 < 4 + 3
+    리스트 내림차순 정렬 후 가장 큰 값부터 하나씩 더해서 target 이상의 값을 가지는 최소 길이의 부분 집합의 합을 구합니다
+    1 <= target <= 109
+    1 <= nums.length <= 105
+    1 <= nums[i] <= 104
     """
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
 
