@@ -1,4 +1,7 @@
 # https://leetcode.com/problems/minimum-size-subarray-sum/
+from typing import List
+
+
 class Solution:
     """
     부분 집합의 합 중 target보다 크거나 같은 최소 길이의 부분 집합을 구합니다
@@ -11,20 +14,22 @@ class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
 
         sum = left = length = 0
+        #sorted_list = sorted(nums, reverse=True)
+        nums.sort(reverse=True)
 
         for i in range (len(nums)):
             if sum < target:
                 sum += nums[i]
                 length += 1
                 continue
-            sum -= nums[left]
-            left += 1
-            sum += nums[i]
+            elif target <= sum:
+                return length
 
+        if sum < target:
+            return 0
+        else:
+            return length
 
-
-
-        return 2
 def test_minSubArrayLen():
     solution = Solution()
     # 4 + 3 = 7, length 2
