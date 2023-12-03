@@ -11,13 +11,14 @@ class Solution:
     1 <= nums.length <= 105
     1 <= nums[i] <= 104
     """
+
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
 
         sum = left = length = 0
-        #sorted_list = sorted(nums, reverse=True)
+        # sorted_list = sorted(nums, reverse=True)
         nums.sort(reverse=True)
 
-        for i in range (len(nums)):
+        for i in range(len(nums)):
             if sum < target:
                 sum += nums[i]
                 length += 1
@@ -30,9 +31,11 @@ class Solution:
         else:
             return length
 
+
 def test_minSubArrayLen():
     solution = Solution()
     # 4 + 3 = 7, length 2
     assert solution.minSubArrayLen(7, [2, 3, 1, 2, 4, 3]) == 2
     # 4, length 1
     assert solution.minSubArrayLen(4, [1, 4, 4]) == 1
+    assert solution.minSubArrayLen(213, [12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12]) == 8
