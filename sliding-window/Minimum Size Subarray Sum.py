@@ -13,6 +13,12 @@ class Solution:
     """
 
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        sum = left = length = 0
+
+        for i in range (len(nums)):
+            sum += nums[i]
+
+    def minSubArrayLen_1(self, target: int, nums: List[int]) -> int:
 
         sum = left = length = 0
         # sorted_list = sorted(nums, reverse=True)
