@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/minimum-size-subarray-sum/
+import sys
 from typing import List
 
 
@@ -13,10 +14,20 @@ class Solution:
     """
 
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
-        sum = left = length = 0
+        sum = left = 0
+        min_length = sys.maxsize
 
         for i in range (len(nums)):
             sum += nums[i]
+            while sum >= target:
+                min_length = min(min_length, i + 1 - left)
+                sum -= nums[left]
+                left += 1
+
+        if min_length != sys.maxsize:
+            return min_length
+        return 0
+        #return min_length if min_length != sys.maxsize else 0
 
     def minSubArrayLen_1(self, target: int, nums: List[int]) -> int:
 
