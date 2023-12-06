@@ -12,6 +12,12 @@ class Solution:
     1 <= nums.length <= 105
     1 <= nums[i] <= 104
     """
+    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        min_length = sys.maxsize
+
+        for i in range (len(nums)):
+            for j in range(i, len(nums)):
+                sum = 0
 
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         sum = left = 0
