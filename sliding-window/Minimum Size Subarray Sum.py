@@ -12,18 +12,28 @@ class Solution:
     1 <= nums.length <= 105
     1 <= nums[i] <= 104
     """
+
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         min_length = sys.maxsize
 
-        for i in range (len(nums)):
+        for i in range(len(nums)):
             for j in range(i, len(nums)):
                 sum = 0
+                for k in range(i, j + 1):
+                    sum += nums[k]
+                if sum >= target:
+                    min_length = min(min_length, j - i + 1)
+                    break
 
-    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        if min_length != sys.maxsize:
+            return min_length
+        return 0
+
+    def minSubArrayLen_2(self, target: int, nums: List[int]) -> int:
         sum = left = 0
         min_length = sys.maxsize
 
-        for i in range (len(nums)):
+        for i in range(len(nums)):
             sum += nums[i]
             while sum >= target:
                 min_length = min(min_length, i + 1 - left)
@@ -33,7 +43,7 @@ class Solution:
         if min_length != sys.maxsize:
             return min_length
         return 0
-        #return min_length if min_length != sys.maxsize else 0
+        # return min_length if min_length != sys.maxsize else 0
 
     def minSubArrayLen_1(self, target: int, nums: List[int]) -> int:
 
