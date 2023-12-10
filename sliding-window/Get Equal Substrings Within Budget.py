@@ -7,6 +7,20 @@ class Solution:
     s and t consist of only lowercase English letters.
     """
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
+
 def test_equalSubstring():
     solution = Solution()
-    assert solution.equalSubstring("abcd", "bcdf", 3)
+    """
+    a + 1 = b
+    b + 1 = c
+    c + 1 = d
+    => max_length of a substring = 3
+    
+    a + 2 = c
+    b + 2 = d
+    maxCost = 3
+    => max_length of a substring = 1
+    """
+    assert solution.equalSubstring("abcd", "bcdf", 3) == 3
+    assert solution.equalSubstring("abcd", "cdef", 3) == 1
+    assert solution.equalSubstring("abcd", "acde", 0) == 1
