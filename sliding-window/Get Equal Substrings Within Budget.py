@@ -7,6 +7,11 @@ class Solution:
     s and t consist of only lowercase English letters.
     """
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
+        print(f"test : {ord('b') - ord('a')}")
+        left = sum = 0
+
+        for i in range(len(s)):
+
 
 def test_equalSubstring():
     solution = Solution()
