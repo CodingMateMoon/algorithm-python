@@ -8,9 +8,13 @@ class Solution:
     """
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
         print(f"test : {ord('b') - ord('a')}")
-        left = sum = 0
-
+        left = max_length = total_cost = 0
+        s_array = [char for char in s]
+        t_array = [char for char in t]
+        
         for i in range(len(s)):
+
+
 
 
 def test_equalSubstring():
