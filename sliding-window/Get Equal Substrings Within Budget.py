@@ -7,12 +7,21 @@ class Solution:
     s and t consist of only lowercase English letters.
     """
     def equalSubstring(self, s: str, t: str, maxCost: int) -> int:
-        print(f"test : {ord('b') - ord('a')}")
         left = max_length = total_cost = 0
+        length = len(s)
         s_array = [char for char in s]
         t_array = [char for char in t]
         
-        for i in range(len(s)):
+        for right in range(length):
+            gap = ord(t_array[right]) - ord(s_array[right])
+            if (total_cost + gap) <= maxCost:
+                total_cost += gap
+                max_length = max(max_length, right - left + 1)
+                continue
+            left += 1
+
+        return max_length
+
 
 
 
@@ -33,3 +42,4 @@ def test_equalSubstring():
     assert solution.equalSubstring("abcd", "bcdf", 3) == 3
     assert solution.equalSubstring("abcd", "cdef", 3) == 1
     assert solution.equalSubstring("abcd", "acde", 0) == 1
+    assert solution.equalSubstring("krrgw", "zjxss", 19) == 2
