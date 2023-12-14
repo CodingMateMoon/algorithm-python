@@ -18,6 +18,7 @@ class Solution:
                 total_cost += gap
                 max_length = max(max_length, right - left + 1)
                 continue
+            total_cost -= ord(t_array[left]) - ord(s_array[left])
             left += 1
 
         return max_length
