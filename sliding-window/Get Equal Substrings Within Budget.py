@@ -13,13 +13,13 @@ class Solution:
         t_array = [char for char in t]
         
         for right in range(length):
-            gap = ord(t_array[right]) - ord(s_array[right])
-            if (total_cost + gap) <= maxCost:
-                total_cost += gap
+            total_cost += ord(t_array[right]) - ord(s_array[right])
+            if (total_cost) <= maxCost:
                 max_length = max(max_length, right - left + 1)
                 continue
-            total_cost -= ord(t_array[left]) - ord(s_array[left])
-            left += 1
+            while(total_cost > maxCost):
+                total_cost -= ord(t_array[left]) - ord(s_array[left])
+                left += 1
 
         return max_length
 
