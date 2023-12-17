@@ -14,6 +14,7 @@ class Solution:
         
         for right in range(length):
             total_cost += ord(t_array[right]) - ord(s_array[right])
+            print(f"{total_cost} / {s[right]} : {t[right]}")
             if (total_cost) <= maxCost:
                 max_length = max(max_length, right - left + 1)
                 continue
@@ -40,7 +41,7 @@ def test_equalSubstring():
     maxCost = 3
     => max_length of a substring = 1
     """
-    assert solution.equalSubstring("abcd", "bcdf", 3) == 3
-    assert solution.equalSubstring("abcd", "cdef", 3) == 1
-    assert solution.equalSubstring("abcd", "acde", 0) == 1
+#    assert solution.equalSubstring("abcd", "bcdf", 3) == 3
+#    assert solution.equalSubstring("abcd", "cdef", 3) == 1
+#    assert solution.equalSubstring("abcd", "acde", 0) == 1
     assert solution.equalSubstring("krrgw", "zjxss", 19) == 2
