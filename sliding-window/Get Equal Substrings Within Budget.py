@@ -11,15 +11,18 @@ class Solution:
         length = len(s)
         s_array = [char for char in s]
         t_array = [char for char in t]
-        
+
         for right in range(length):
-            total_cost += ord(t_array[right]) - ord(s_array[right])
-            print(f"{total_cost} / {s[right]} : {t[right]}")
+            gap = abs(ord(t_array[right]) - ord(s_array[right]))
+
+            total_cost += gap
+
+            print(f"{total_cost} (gap : {gap}) / {s[right]} : {t[right]}")
             if (total_cost) <= maxCost:
                 max_length = max(max_length, right - left + 1)
                 continue
             while(total_cost > maxCost):
-                total_cost -= ord(t_array[left]) - ord(s_array[left])
+                total_cost -= abs(ord(t_array[left]) - ord(s_array[left]))
                 left += 1
 
         return max_length
