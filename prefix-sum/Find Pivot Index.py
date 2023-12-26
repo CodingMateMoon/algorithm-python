@@ -4,6 +4,21 @@ from typing import List
 # https://leetcode.com/problems/find-pivot-index/description/
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
+        pivot_index = left_sum = right_sum = 0
+        for pivot_index in range(len(nums)):
+            for left in range(0, pivot_index):
+                left_sum += nums[left]
+            for right in range(pivot_index + 1, len(nums)):
+                right_sum += nums[right]
+            if left_sum == right_sum:
+                return pivot_index
+            left_sum = right_sum = 0
+
+        return -1
+
+
+
+
 
 
 def test_pivotIndex():
