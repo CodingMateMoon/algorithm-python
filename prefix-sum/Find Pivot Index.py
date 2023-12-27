@@ -5,15 +5,18 @@ from typing import List
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         pivot_index = left_sum = right_sum = 0
-        for pivot_index in range(len(nums)):
-            for left in range(0, pivot_index):
-                left_sum += nums[left]
-            for right in range(pivot_index + 1, len(nums)):
-                right_sum += nums[right]
+        for num in nums:
+            right_sum += num
+        right_sum -= nums[0]
+        for pivot_index in range(len(nums) - 1):
+            print(f"left : {left_sum} / right : {right_sum}")
             if left_sum == right_sum:
                 return pivot_index
-            left_sum = right_sum = 0
 
+            left_sum += nums[pivot_index]
+            right_sum -= nums[pivot_index + 1]
+        if left_sum == right_sum:
+            return pivot_index
         return -1
 
 
@@ -34,3 +37,4 @@ def test_pivotIndex():
     assert solution.pivotIndex([1, 7, 3, 6, 5, 6]) == 3
     assert solution.pivotIndex([1, 2, 3]) == -1
     assert solution.pivotIndex([2, 1, -1]) == 0
+    assert solution.pivotIndex([-1,-1,0,1,1,0]) == 5
