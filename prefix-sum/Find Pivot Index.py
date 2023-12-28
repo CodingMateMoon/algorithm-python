@@ -4,6 +4,14 @@ from typing import List
 # https://leetcode.com/problems/find-pivot-index/description/
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
+        S = sum(nums)
+        left_sum = 0
+        for i, x in enumerate(nums):
+            if left_sum == (S - left_sum - x):
+                return i
+            left_sum += x
+        return -1
+    def pivotIndex_1(self, nums: List[int]) -> int:
         pivot_index = left_sum = right_sum = 0
         for num in nums:
             right_sum += num
@@ -30,8 +38,8 @@ def test_pivotIndex():
     0 = 1 - 1 = 0
     (4) expected : 5, actual 4
     -1, -1  
+    """
     assert solution.pivotIndex([1, 7, 3, 6, 5, 6]) == 3
     assert solution.pivotIndex([1, 2, 3]) == -1
     assert solution.pivotIndex([2, 1, -1]) == 0
-    """
     assert solution.pivotIndex([-1, -1, 0, 1, 1, 0]) == 5
