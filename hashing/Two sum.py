@@ -4,13 +4,11 @@ from typing import List
 # https://leetcode.com/problems/two-sum/
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        sum = nums[0]
-        for i in range (1, len(nums)):
-            sum += nums[i]
-            if sum == target:
-                return [i - 1, i]
-            sum -= nums[i - 1]
-        return -1
+        sum = 0
+        n = len(nums)
+        for i in range(n):
+            for j in range(i + 1, n):
+                
 
 
 
