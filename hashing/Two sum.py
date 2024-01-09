@@ -4,6 +4,9 @@ from typing import List
 # https://leetcode.com/problems/two-sum/
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+    # time : n2, space : 1
+    def twoSum_1(self, nums: List[int], target: int) -> List[int]:
         sum = 0
         n = len(nums)
         for i in range(n):
