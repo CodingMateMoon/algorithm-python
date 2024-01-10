@@ -3,7 +3,10 @@ from typing import List
 
 # https://leetcode.com/problems/two-sum/
 class Solution:
+
+    # reduce the lookup time from O(n) to O(1) by trading space for speed
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+
 
     # time : n2, space : 1
     def twoSum_1(self, nums: List[int], target: int) -> List[int]:
