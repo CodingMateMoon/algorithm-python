@@ -6,6 +6,12 @@ class Solution:
 
     # reduce the lookup time from O(n) to O(1) by trading space for speed
     def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
+        for i in range (len(nums)):
+            hashmap[nums[i]] = i
+        for i in range (len(nums)):
+            
+
 
 
     # time : n2, space : 1
