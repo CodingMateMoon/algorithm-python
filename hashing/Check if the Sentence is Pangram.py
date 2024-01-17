@@ -6,10 +6,9 @@ class Solution:
         isUsed = [0] * (ord('z') - ord('a') + 1)
 
         for i in range(len(sentence)):
-            print(ord(sentence[i]))
-            #isUsed[ord(sentence[i])] = True
+            isUsed[ord(sentence[i]) - ord('a')] = True
 
-        for i in range(isUsed):
+        for i in range(len(isUsed)):
             if isUsed[i] == False:
                 return False
 
