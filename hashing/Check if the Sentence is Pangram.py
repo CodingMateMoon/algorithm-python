@@ -3,6 +3,14 @@ class Solution:
     # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4601/
     # a sentence where every letter of the English alphabet appears at least once.
     def checkIfPangram(self, sentence: str) -> bool:
+        # Time : O(n), Space : O(1)
+        # Add every letter of 'sentence' to hash set 'seen'.
+        seen = set(sentence)
+
+        # If the size of 'seen' is 26, then 'sentence' is a pangram.
+        return len(seen) == 26
+    def checkIfPangram_2(self, sentence: str) -> bool:
+        # Time : O(n), Space : O(1)
         # We iterate over 'sentence' for 26 times, one for each letter 'curr_char'.
         for i in range(26):
             curr_char = chr(ord('a') + i)
