@@ -3,6 +3,20 @@ class Solution:
     # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4601/
     # a sentence where every letter of the English alphabet appears at least once.
     def checkIfPangram(self, sentence: str) -> bool:
+        # Array 'seen' of size 26.
+        seen = [False] * 26
+
+        # For every letter 'currChar', we find its ASCII code,
+        # and update value at the mapped index as true.
+        for curr_char in sentence:
+            seen[ord(curr_char) - ord('a')] = True
+
+        # Once we finish iterating, check if 'seen' contains false.
+        for status in seen:
+            if not status:
+                return False
+        return True
+    def checkIfPangram_3(self, sentence: str) -> bool:
         # Time : O(n), Space : O(1)
         # Add every letter of 'sentence' to hash set 'seen'.
         seen = set(sentence)
