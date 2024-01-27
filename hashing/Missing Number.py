@@ -3,6 +3,14 @@ from typing import List
 # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4602/
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
+        num_set = set(nums)
+        n = len(nums) + 1
+        
+        for num in range(n):
+            if num not in num_set:
+                return num
+    def missingNumber_2(self, nums: List[int]) -> int:
+
         nums.sort()
 
         # Ensure that n is at the last index
