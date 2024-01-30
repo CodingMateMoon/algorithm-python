@@ -4,6 +4,9 @@ from typing import List
 class Solution:
     def countElements(self, arr: List[int]) -> int:
 
+        for i in range(len(arr)):
+            
+
 
 def test_countElements():
     """
@@ -12,5 +15,6 @@ def test_countElements():
     0 <= arr[i] <= 1000
     """
     solution = Solution()
+    # 1,2 / 3,4
     assert solution.countElements([1, 2, 3]) == 2
     assert solution.countElements([1, 1, 3, 3, 5, 5, 7, 7]) == 0
