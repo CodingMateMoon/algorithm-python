@@ -9,10 +9,10 @@ class Solution:
         answer = 0
 
         for i in range(len(arr)):
-            num_dict[arr[i]] += 1
+            num_dict[arr[i]] = 1
 
-        for value in num_dict:
-            print(f"val : {value}")
+        for key, value in num_dict:
+            print(f"{key} : {value}")
 
 
 def test_countElements():
