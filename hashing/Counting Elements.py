@@ -5,14 +5,13 @@ from typing import List
 class Solution:
     def countElements(self, arr: List[int]) -> int:
 
-        num_dict = {}
         answer = 0
 
         for i in range(len(arr)):
-            num_dict[arr[i]] = 1
+            if arr[i] + 1 in arr:
+                answer += 1
 
-        for key, value in num_dict:
-            print(f"{key} : {value}")
+        return answer
 
 
 def test_countElements():
