@@ -4,6 +4,14 @@ from typing import List
 # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4661/
 class Solution:
     def countElements(self, arr: List[int]) -> int:
+        hash_set = set(arr)
+        count = 0
+        for x in arr:
+            if x + 1 in hash_set:
+                count += 1
+        return count
+    
+    def countElements_1(self, arr: List[int]) -> int:
 
         answer = 0
 
@@ -12,7 +20,6 @@ class Solution:
                 answer += 1
 
         return answer
-
 
 def test_countElements():
     """
