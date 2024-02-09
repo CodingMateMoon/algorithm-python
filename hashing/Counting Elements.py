@@ -13,7 +13,6 @@ class Solution:
                     count += run_length
                 run_length = 0
             run_length += 1
-            run_length += 1
         return count
     def countElements_2(self, arr: List[int]) -> int:
         hash_set = set(arr)
