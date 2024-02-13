@@ -7,9 +7,14 @@ class Solution(object):
         :type shift: List[List[int]]
         :rtype: str
         """
+        char_array = list(s)
         for direction, amount in shift:
             if direction == 0:
-                    
+                for i in range(amount):
+                    print(f"{direction} : {i}")
+            else:
+                for i in range(amount):
+                    print(f"{direction} : {i}")
 
         return "cab"
 
@@ -18,6 +23,8 @@ def test_stringShift():
     """
     direction> 0 : left, 1 : right
     amount> e.g) [0, 1]
+    A left shift by 1 means remove the first character of s and append it to the end.
+    Similarly, a right shift by 1 means remove the last character of s and add it to the beginning.
     [0,1] means shift to left by 1. "abc" -> "bca"
     [1,2] means shift to right by 2. "bca" -> "cab"
     """
