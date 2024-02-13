@@ -10,8 +10,12 @@ class Solution(object):
         char_array = list(s)
         for direction, amount in shift:
             if direction == 0:
-                for i in range(amount):
+                shift_char = char_array[0]
+                for x in range(amount):
                     print(f"{direction} : {i}")
+                    for i in range(1, len(char_array)):
+                        char_array[i - 1] = char_array[i]
+                    char_array[len(char_array) - 1] = shift_char
             else:
                 for i in range(amount):
                     print(f"{direction} : {i}")
