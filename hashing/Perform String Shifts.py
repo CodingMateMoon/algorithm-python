@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/perform-string-shifts/description/
+# https://leetcode.com/problems/perform-string-shifts/description/
 class Solution(object):
     def stringShift(self, s, shift):
         """
@@ -10,20 +10,23 @@ class Solution(object):
         char_array = list(s)
         for direction, amount in shift:
             if direction == 0:
-                shift_char = char_array[0]
                 for x in range(amount):
+                    shift_char = char_array[0]
                     for i in range(1, len(char_array)):
                         char_array[i - 1] = char_array[i]
                     char_array[len(char_array) - 1] = shift_char
+                    print(f"char array : {char_array}")
             else:
-                shift_char = char_array[len(char_array) - 1]
                 for x in range(amount):
-                    for i in range(len(char_array) - 1):
-                        char_array[i] = char_array[i + 1]
+                    shift_char = char_array[len(char_array) - 1]
+                    for i in range(len(char_array) - 1, 0, -1):
+                        print(f"i : {i}")
+                        char_array[i - 1] = char_array[i]
                     char_array[0] = shift_char
-
+                    print(f"char array2 : {char_array}")
 
         return ''.join(char_array)
+
 
 def test_stringShift():
     solution = Solution()
@@ -35,4 +38,5 @@ def test_stringShift():
     [0,1] means shift to left by 1. "abc" -> "bca"
     [1,2] means shift to right by 2. "bca" -> "cab"
     """
-    assert solution.stringShift("abc", [[0, 1], [1,2]]) == "cab"
+    assert solution.stringShift("abc", [[0, 1], [1, 2]]) == "cab"
+    assert solution.stringShift("abcdefg", [[1, 1], [1, 1], [0, 2], [1, 3]]) == "efgabcd"
