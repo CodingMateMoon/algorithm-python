@@ -12,15 +12,18 @@ class Solution(object):
             if direction == 0:
                 shift_char = char_array[0]
                 for x in range(amount):
-                    print(f"{direction} : {i}")
                     for i in range(1, len(char_array)):
                         char_array[i - 1] = char_array[i]
                     char_array[len(char_array) - 1] = shift_char
             else:
-                for i in range(amount):
-                    print(f"{direction} : {i}")
+                shift_char = char_array[len(char_array) - 1]
+                for x in range(amount):
+                    for i in range(len(char_array) - 1):
+                        char_array[i] = char_array[i + 1]
+                    char_array[0] = shift_char
 
-        return "cab"
+
+        return ''.join(char_array)
 
 def test_stringShift():
     solution = Solution()
