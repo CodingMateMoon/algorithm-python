@@ -15,15 +15,12 @@ class Solution(object):
                     for i in range(1, len(char_array)):
                         char_array[i - 1] = char_array[i]
                     char_array[len(char_array) - 1] = shift_char
-                    print(f"char array : {char_array}")
             else:
                 for x in range(amount):
                     shift_char = char_array[len(char_array) - 1]
-                    for i in range(len(char_array) - 1, 0, -1):
-                        print(f"i : {i}")
-                        char_array[i - 1] = char_array[i]
+                    for i in range(len(char_array) - 2, -1, -1):
+                        char_array[i + 1] = char_array[i]
                     char_array[0] = shift_char
-                    print(f"char array2 : {char_array}")
 
         return ''.join(char_array)
 
