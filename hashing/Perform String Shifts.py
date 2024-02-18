@@ -2,8 +2,16 @@
 class Solution(object):
     def stringShift(self, s, shift):
         for direction, amount in shift:
+
             if direction == 0:
                 print(f"{s} : {amount} : {s[amount:]} : {s[:amount]}")
+                s = s[amount:] + s[:amount]
+                continue
+            right_index = len(s) - amount
+            s = s[right_index:] + s[:right_index]
+
+        return s
+
     def stringShift_1(self, s, shift):
         """
         :type s: str
