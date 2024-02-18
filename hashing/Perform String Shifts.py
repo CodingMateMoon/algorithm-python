@@ -1,6 +1,10 @@
 # https://leetcode.com/problems/perform-string-shifts/description/
 class Solution(object):
     def stringShift(self, s, shift):
+        for direction, amount in shift:
+            if direction == 0:
+                print(f"{s} : {amount} : {s[amount:]} : {s[:amount]}")
+    def stringShift_1(self, s, shift):
         """
         :type s: str
         shift [direction, amount]
