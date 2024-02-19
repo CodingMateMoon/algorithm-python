@@ -2,6 +2,16 @@
 class Solution(object):
     def stringShift(self, s, shift):
         for direction, amount in shift:
+            amount %= len(s)
+            if direction == 0:
+                # Move necessary amount of characters from start to end
+                s = s[amount:] + s[:amount]
+            else:
+                # Move necessary amount of characters from end to start
+                s = s[-amount:] + s[:-amount]
+        return s
+    def stringShift_2(self, s, shift):
+        for direction, amount in shift:
 
             if direction == 0:
                 print(f"{s} : {amount} : {s[amount:]} : {s[:amount]}")
