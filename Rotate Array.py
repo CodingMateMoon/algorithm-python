@@ -4,6 +4,15 @@ from typing import List
 
 class Solution:
     def rotate(self, nums: List[int], k: int) -> List[int]:
+        # speed up the rotation
+        k %= len(nums)
+
+        for i in range(k):
+            previous = nums[-1]
+            for j in range(len(nums)):
+                nums[j], previous = previous, nums[j]
+
+    def rotate_1(self, nums: List[int], k: int) -> List[int]:
 
         length = len(nums)
         k = k % length
