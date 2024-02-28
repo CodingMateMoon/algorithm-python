@@ -1,6 +1,19 @@
 # https://leetcode.com/problems/perform-string-shifts/description/
 class Solution(object):
     def stringShift(self, s, shift):
+        # Count the number of left shifts. A right shift is a negative left shift.
+        left_shifts = 0
+        for direction, amount in shift:
+            if direction == 1:
+                amount = -amount
+            left_shifts += amount
+
+        # Convert back to a positive, do left shifts, and return.
+        left_shifts %= len(s)
+        s = s[left_shifts:] + s[:left_shifts]
+        return s
+
+    def stringShift(self, s, shift):
         # Add up the left shifts and right shifts.
         overall_shifts = [0, 0]
         for direction, amount in shift:
