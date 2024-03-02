@@ -13,7 +13,8 @@ matches[i] = [winner(i), loser(i)]
 """
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        return [[1,2,10],[4,5,7,8]]
+        for winner, loser in matches:
+            print(f"{winner} : {loser}")
 
 def test_findWinners():
    solution = Solution()
