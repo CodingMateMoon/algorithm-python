@@ -20,7 +20,8 @@ def test_findWinners():
    solution = Solution()
    """
    항상 이긴 경우, 1번만 진 경우 구하기.
-   
+    answer[0] is a list of all players that have not lost any matches.
+    answer[1] is a list of all players that have lost exactly one match 
     Players 1, 2, and 10 have not lost any matches.
     Players 4, 5, 7, and 8 each have lost one match.
     Players 3, 6, and 9 each have lost two matches.
