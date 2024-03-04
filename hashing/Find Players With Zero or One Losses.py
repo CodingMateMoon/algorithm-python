@@ -13,6 +13,8 @@ matches[i] = [winner(i), loser(i)]
 """
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        winner_dict = {}
+        loser_dict = {}
         for winner, loser in matches:
             print(f"{winner} : {loser}")
 
