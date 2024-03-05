@@ -13,10 +13,14 @@ matches[i] = [winner(i), loser(i)]
 """
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        winner_dict = {}
+        winner_list = []
         loser_dict = {}
         for winner, loser in matches:
-            print(f"{winner} : {loser}")
+            winner_list.append(winner)
+            if loser in loser_dict:
+                loser_dict[loser] += 1
+                continue
+            loser_dict[loser] = 1
 
 def test_findWinners():
    solution = Solution()
