@@ -22,6 +22,13 @@ class Solution:
                 continue
             loser_dict[loser] = 1
 
+        for key, value in loser_dict.items():
+            print(f"loser / {key} : {value}")
+
+        for winner in winner_list:
+            print(f"winner : {winner}")
+
+
 def test_findWinners():
    solution = Solution()
    """
