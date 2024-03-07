@@ -13,10 +13,10 @@ matches[i] = [winner(i), loser(i)]
 """
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        winner_list = []
+        winners = set()
         loser_dict = {}
         for winner, loser in matches:
-            winner_list.append(winner)
+            winners.add(winner)
             if loser in loser_dict:
                 loser_dict[loser] += 1
                 continue
@@ -25,7 +25,13 @@ class Solution:
         for key, value in loser_dict.items():
             print(f"loser / {key} : {value}")
 
-        for winner in winner_list:
+        copy_of_set = winners.copy()
+
+        for winner in copy_of_set:
+            if winner in loser_dict:
+                winners.remove(winner)
+
+        for winner in winners:
             print(f"winner : {winner}")
 
 
