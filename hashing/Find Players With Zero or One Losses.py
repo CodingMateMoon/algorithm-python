@@ -15,6 +15,7 @@ class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
         winners = set()
         loser_dict = {}
+        losers = []
         for winner, loser in matches:
             winners.add(winner)
             if loser in loser_dict:
@@ -31,8 +32,14 @@ class Solution:
             if winner in loser_dict:
                 winners.remove(winner)
 
-        for winner in winners:
-            print(f"winner : {winner}")
+        for key, value in loser_dict.items():
+            if value == 1:
+                losers.append(key)
+        losers.sort()
+        winners_list = list(winners)
+        winners_list.sort()
+        return [winners_list, losers]
+
 
 
 def test_findWinners():
