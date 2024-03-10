@@ -12,10 +12,7 @@ winneri != loseri
 matches[i] = [winner(i), loser(i)]
 """
 class Solution:
-    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
-        zero_loss = set()
-        one_loss = set()
-        more_losses = set()
+
     def findWinners_1(self, matches: List[List[int]]) -> List[List[int]]:
         winners = set()
         loser_dict = {}
@@ -43,6 +40,33 @@ class Solution:
         winners_list = list(winners)
         winners_list.sort()
         return [winners_list, losers]
+
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        zero_loss = set()
+        one_loss = set()
+        more_losses = set()
+
+        for winner, loser in matches:
+
+            if winner not in one_loss and winner not in more_losses:
+                zero_loss.add(winner)
+
+            if loser in more_losses:
+                continue
+
+            if loser in zero_loss:
+                zero_loss.remove(loser)
+                one_loss.add(loser)
+            elif loser in one_loss:
+                one_loss.remove(loser)
+                more_losses.add(loser)
+            else:
+                one_loss.add(loser)
+
+        return [sorted(list(zero_loss)), sorted(list(one_loss))]
+
+
+
 
 
 
