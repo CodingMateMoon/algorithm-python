@@ -41,6 +41,8 @@ class Solution:
         winners_list.sort()
         return [winners_list, losers]
 
+    # Time : O(N * logN)
+    # Space : O(N)
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
         zero_loss = set()
         one_loss = set()
