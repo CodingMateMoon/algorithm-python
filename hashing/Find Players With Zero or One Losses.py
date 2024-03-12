@@ -43,7 +43,7 @@ class Solution:
 
     # Time : O(N * logN)
     # Space : O(N)
-    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+    def findWinners_2(self, matches: List[List[int]]) -> List[List[int]]:
         zero_loss = set()
         one_loss = set()
         more_losses = set()
@@ -66,6 +66,10 @@ class Solution:
                 one_loss.add(loser)
 
         return [sorted(list(zero_loss)), sorted(list(one_loss))]
+
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        seen = set()
+        losses_count = {}
 
 
 
