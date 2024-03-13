@@ -71,6 +71,16 @@ class Solution:
         seen = set()
         losses_count = {}
 
+        for winner, loser in matches:
+            seen.add(winner)
+            seen.add(loser)
+            losses_count[loser] += 1
+
+        zero_loss, one_lose = [], []
+        for player in seen:
+            
+
+
 
 
 
