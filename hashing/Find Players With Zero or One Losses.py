@@ -74,10 +74,19 @@ class Solution:
         for winner, loser in matches:
             seen.add(winner)
             seen.add(loser)
-            losses_count[loser] += 1
+            losses_count[loser] = losses_count.get(loser, 0) + 1
 
-        zero_loss, one_lose = [], []
+        zero_lose, one_lose = [], []
         for player in seen:
+            count = losses_count.get(player, 0)
+            if count == 0:
+                zero_lose.append(player)
+                continue
+            if count == 1:
+                one_lose.append(player)
+
+        return [sorted(zero_lose), sorted(one_lose)]
+
             
 
 
