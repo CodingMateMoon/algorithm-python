@@ -93,6 +93,13 @@ class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
         losses_count = {}
 
+        for winner, loser in matches:
+            losses_count[winner] = losses_count.get(winner, 0)
+            losses_count[loser] = losses_count.get(loser, 0)
+
+        for player, count in losses_count.items():
+
+
             
 
 
