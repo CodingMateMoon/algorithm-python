@@ -95,9 +95,16 @@ class Solution:
 
         for winner, loser in matches:
             losses_count[winner] = losses_count.get(winner, 0)
-            losses_count[loser] = losses_count.get(loser, 0)
+            losses_count[loser] = losses_count.get(loser, 0) + 1
 
+        zero_loss, one_loss = [], []
         for player, count in losses_count.items():
+            if count == 0:
+                zero_loss.append(player)
+            elif count == 1:
+                one_loss.append(player)
+
+        return [sorted(zero_loss), sorted(one_loss)]
 
 
             
