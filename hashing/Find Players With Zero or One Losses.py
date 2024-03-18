@@ -90,7 +90,7 @@ class Solution:
 
         return [sorted(zero_lose), sorted(one_lose)]
 
-    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+    def findWinners_4(self, matches: List[List[int]]) -> List[List[int]]:
         losses_count = {}
 
         for winner, loser in matches:
@@ -105,6 +105,9 @@ class Solution:
                 one_loss.append(player)
 
         return [sorted(zero_loss), sorted(one_loss)]
+
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        losses_count = [-1] * 100001
 
 
             
