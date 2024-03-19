@@ -109,6 +109,13 @@ class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
         losses_count = [-1] * 100001
 
+        for winner, loser in matches:
+            if losses_count[winner] == -1:
+                losses_count[winner] = 0
+            elif losses_count[loser] == -1:
+                losses_count[loser] = 1
+
+
 
             
 
