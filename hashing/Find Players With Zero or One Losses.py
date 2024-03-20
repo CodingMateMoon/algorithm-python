@@ -112,8 +112,20 @@ class Solution:
         for winner, loser in matches:
             if losses_count[winner] == -1:
                 losses_count[winner] = 0
-            elif losses_count[loser] == -1:
+            if losses_count[loser] == -1:
                 losses_count[loser] = 1
+                continue
+            losses_count[loser] += 1
+
+        answer = [[], []]
+        for player in range(100001):
+            if losses_count[player] == 0:
+                answer[0].append(player)
+                continue
+            if losses_count[player] == 1:
+                answer[1].append(player)
+
+        return answer
 
 
 
