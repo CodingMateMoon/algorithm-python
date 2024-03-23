@@ -9,7 +9,15 @@ class Solution:
         occur_counts = {}
 
         for num in nums:
-            occur_count = occur_counts.get(num, 0)
+            occur_count = occur_counts.get(num, 0) + 1
+            occur_counts[num] = occur_count
+
+        max_num = -1
+        for num, occur_count in occur_counts.items():
+            if occur_count == 1:
+                max_num = max(num, max_num)
+
+        return max_num
 
 
 
