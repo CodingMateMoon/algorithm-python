@@ -5,7 +5,7 @@ from typing import List
 
 
 class Solution:
-    def largestUniqueNumber(self, nums: List[int]) -> int:
+    def largestUniqueNumber_1(self, nums: List[int]) -> int:
         occur_counts = {}
 
         for num in nums:
@@ -18,6 +18,12 @@ class Solution:
                 max_num = max(num, max_num)
 
         return max_num
+    def largestUniqueNumber(self, nums: List[int]) -> int:
+        nums = sorted(nums)
+
+        for i in range(len(nums) - 1, -1,  -1):
+            print(f"i : {i} : {nums[i]}")
+
 
 
 
