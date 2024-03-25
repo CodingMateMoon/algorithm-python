@@ -23,6 +23,8 @@ class Solution:
 
         for i in range(len(nums) - 1, -1,  -1):
             print(f"i : {i} : {nums[i]}")
+            if nums[i] != nums[i - 1]:
+                return nums[i]
 
 
 
