@@ -19,15 +19,19 @@ class Solution:
 
         return max_num
     def largestUniqueNumber(self, nums: List[int]) -> int:
-        nums.sort(reverse=True)
+        nums.sort()
+
+        x = 0
 
         for i in range(len(nums) - 1, -1,  -1):
-            print(f"i : {i} : {nums[i]}")
-            if i == 0 and nums[i] != nums[i - 1]:
-                return nums[i]
+            print(f"i : {i - x} : {nums[i - x]}")
+            if (i - x) == 0 or nums[i - x] != nums[i - 1 - x]:
+                return nums[i - x]
 
-            while i > 0 and nums[i] == nums[i-1]:
-                i -= 1
+            while (i - x)> 0 and nums[i - x] == nums[i-1 -x]:
+                print(f"i / {i - x} :{nums[i - x]} : {nums[i-1 -x]}")
+                x += 1
+                print(f"<i> : {i - x}")
 
         return -1
 
