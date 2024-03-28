@@ -24,8 +24,11 @@ class Solution:
         x = 0
 
         for i in range(len(nums) - 1, -1,  -1):
-            print(f"i : {i - x} : {nums[i - x]}")
+            print(f"(x : {x}) / i : {i - x} : (i - x :{nums[i - x]}), (i - 1 - x :{nums[i - 1 - x]})")
+            print((i - x) == 0)
+            print(nums[i - x] != nums[i - 1 - x])
             if (i - x) == 0 or nums[i - x] != nums[i - 1 - x]:
+                print(f"return : {i - x}")
                 return nums[i - x]
 
             while (i - x)> 0 and nums[i - x] == nums[i-1 -x]:
