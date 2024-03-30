@@ -29,7 +29,8 @@ class Solution:
             print(nums[i - x] != nums[i - 1 - x])
             if (i - x) == 0 or nums[i - x] != nums[i - 1 - x]:
                 print(f"return : {i - x}")
-                return nums[i - x]
+                index = i - x
+                return nums[index]
 
             while (i - x)> 0 and nums[i - x] == nums[i-1 -x]:
                 print(f"i / {i - x} :{nums[i - x]} : {nums[i-1 -x]}")
