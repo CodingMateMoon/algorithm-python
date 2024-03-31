@@ -18,7 +18,8 @@ class Solution:
                 max_num = max(num, max_num)
 
         return max_num
-    def largestUniqueNumber(self, nums: List[int]) -> int:
+
+    def largestUniqueNumber_2(self, nums: List[int]) -> int:
         nums.sort()
 
         x = 0
@@ -38,6 +39,24 @@ class Solution:
                 print(f"<i> : {i - x}")
 
         return -1
+    def largestUniqueNumber(self, nums: List[int]) -> int:
+        nums.sort()
+
+        index = len(nums) - 1
+        while True:
+
+            print(f"index : {index} / nums[{index}] : {nums[index]}")
+            if index == 0 or nums[index] != nums[index - 1]:
+                return nums[index]
+                #print(f"return index : {index} / {nums[index]} != {nums[index - 1]}")
+
+            while index > 0 and nums[index] == nums[index - 1]:
+                index -= 1
+
+            index -= 1
+
+
+
 
 
 
