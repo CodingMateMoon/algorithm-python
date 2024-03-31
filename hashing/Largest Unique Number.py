@@ -43,7 +43,7 @@ class Solution:
         nums.sort()
 
         index = len(nums) - 1
-        while True:
+        while index > -1:
 
             print(f"index : {index} / nums[{index}] : {nums[index]}")
             if index == 0 or nums[index] != nums[index - 1]:
@@ -54,6 +54,7 @@ class Solution:
                 index -= 1
 
             index -= 1
+        return -1
 
 
 
