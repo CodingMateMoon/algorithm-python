@@ -39,7 +39,7 @@ class Solution:
                 print(f"<i> : {i - x}")
 
         return -1
-    def largestUniqueNumber(self, nums: List[int]) -> int:
+    def largestUniqueNumber_3(self, nums: List[int]) -> int:
         nums.sort()
 
         index = len(nums) - 1
@@ -55,6 +55,12 @@ class Solution:
 
             index -= 1
         return -1
+
+    def largestUniqueNumber(self, nums: List[int]) -> int:
+        count = {}
+
+        for num in nums:
+            
 
 
 
