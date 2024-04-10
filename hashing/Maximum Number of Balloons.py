@@ -1,14 +1,15 @@
 class Solution:
     # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4663/
     def maxNumberOfBalloons(self, text: str) -> int:
+        standard = {"b": 1, "a": 1, "l": 2, "o": 2, "n": 1}
+
         balloon_count = {}
         for element in text:
             if element == 'b' or element == 'a' or element == 'l' or element == 'o' or element == 'n':
                 balloon_count[element] = balloon_count.get(element, 0) + 1
 
-
-
         return 1
+
 
 def test_maxNumberOfBalloons():
     """
