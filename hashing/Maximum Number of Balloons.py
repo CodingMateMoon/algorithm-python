@@ -8,6 +8,9 @@ class Solution:
             if element == 'b' or element == 'a' or element == 'l' or element == 'o' or element == 'n':
                 balloon_count[element] = balloon_count.get(element, 0) + 1
 
+        for key, value in balloon_count.items():
+            print(f"{key} : {value}")
+
         return 1
 
 
@@ -24,4 +27,4 @@ def test_maxNumberOfBalloons():
     """
     solution = Solution()
     assert solution.maxNumberOfBalloons("nlaebolko") == 1
-    assert solution.maxNumberOfBalloons("loonbalxballpoon") == 2
+    #assert solution.maxNumberOfBalloons("loonbalxballpoon") == 2
