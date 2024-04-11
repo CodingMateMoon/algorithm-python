@@ -3,12 +3,13 @@ class Solution:
     def maxNumberOfBalloons(self, text: str) -> int:
         standard = {"b": 1, "a": 1, "l": 2, "o": 2, "n": 1}
 
-        balloon_count = {}
+        elements_count = {}
         for element in text:
             if element == 'b' or element == 'a' or element == 'l' or element == 'o' or element == 'n':
-                balloon_count[element] = balloon_count.get(element, 0) + 1
+                elements_count[element] = elements_count.get(element, 0) + 1
 
-        for key, value in balloon_count.items():
+        balloon_count = 0
+        for key, value in elements_count.items():
             print(f"{key} : {value}")
 
         return 1
