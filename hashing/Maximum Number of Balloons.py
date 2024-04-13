@@ -10,7 +10,10 @@ class Solution:
 
         balloon_count = 0
         for key, value in elements_count.items():
-            print(f"{key} : {value}")
+            for standard_key, standard_value in standard.items():
+                if key == standard_key:
+                    
+
 
         return 1
 
