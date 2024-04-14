@@ -9,15 +9,13 @@ class Solution:
                 elements_count[element] = elements_count.get(element, 0) + 1
 
         balloon_count = 0
-        for key, value in elements_count.items():
-            if value - standard[key] < 0:
-                return balloon_count
-            element[key] -= standard[key]
-                
+        while True:
+            for key, value in elements_count.items():
+                if value - standard[key] < 0:
+                    return balloon_count
+                elements_count[key] -= standard[key]
 
-
-
-        return 1
+        return balloon_count
 
 
 def test_maxNumberOfBalloons():
