@@ -10,9 +10,11 @@ class Solution:
 
         balloon_count = 0
         for key, value in elements_count.items():
-            for standard_key, standard_value in standard.items():
-                if key == standard_key:
-                    
+            if value - standard[key] < 0:
+                return balloon_count
+            element[key] -= standard[key]
+                
+
 
 
         return 1
