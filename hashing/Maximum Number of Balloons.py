@@ -14,6 +14,7 @@ class Solution:
                 if value - standard[key] < 0:
                     return balloon_count
                 elements_count[key] -= standard[key]
+            balloon_count += 1
 
         return balloon_count
 
@@ -31,4 +32,4 @@ def test_maxNumberOfBalloons():
     """
     solution = Solution()
     assert solution.maxNumberOfBalloons("nlaebolko") == 1
-    #assert solution.maxNumberOfBalloons("loonbalxballpoon") == 2
+    assert solution.maxNumberOfBalloons("loonbalxballpoon") == 2
