@@ -1,6 +1,6 @@
 class Solution:
     # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4663/
-    def maxNumberOfBalloons(self, text: str) -> int:
+    def maxNumberOfBalloons_1(self, text: str) -> int:
         standard = {"b": 1, "a": 1, "l": 2, "o": 2, "n": 1}
 
         elements_count = {}
@@ -17,6 +17,8 @@ class Solution:
             balloon_count += 1
 
         return balloon_count
+    def maxNumberOfBalloons(self, text: str) -> int:
+        b_count = a_count = l_count = o_count = n_count = 0
 
 
 def test_maxNumberOfBalloons():
