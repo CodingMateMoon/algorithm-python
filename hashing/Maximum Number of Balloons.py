@@ -19,6 +19,18 @@ class Solution:
         return balloon_count
     def maxNumberOfBalloons(self, text: str) -> int:
         b_count = a_count = l_count = o_count = n_count = 0
+        for element in text:
+            if element == "b":
+                b_count += 1
+            elif element == "a":
+                a_count += 1
+            elif element == "l":
+                l_count += 1
+            elif element == "o":
+                o_count += 1
+            elif element == "n":
+                n_count += 1
+
 
 
 def test_maxNumberOfBalloons():
