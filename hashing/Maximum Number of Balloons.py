@@ -31,6 +31,11 @@ class Solution:
             elif element == "n":
                 n_count += 1
 
+        l_count /= 2
+        o_count /= 2
+
+        return min(b_count, min(a_count, min(l_count, min(o_count, n_count))))
+
 
 
 def test_maxNumberOfBalloons():
