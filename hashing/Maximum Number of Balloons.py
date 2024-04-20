@@ -17,7 +17,7 @@ class Solution:
             balloon_count += 1
 
         return balloon_count
-    def maxNumberOfBalloons(self, text: str) -> int:
+    def maxNumberOfBalloons_2(self, text: str) -> int:
         b_count = a_count = l_count = o_count = n_count = 0
         for element in text:
             if element == "b":
@@ -36,6 +36,12 @@ class Solution:
 
         return min(b_count, min(a_count, min(l_count, min(o_count, n_count))))
 
+    def maxNumberOfBalloons(self, text: str) -> int:
+        pattern = "balloon"
+        return self.findMaxNumberOfPattern(text, pattern)
+
+    def findMaxNumberOfPattern(self, text: str, pattern: str):
+        return 1
 
 
 def test_maxNumberOfBalloons():
