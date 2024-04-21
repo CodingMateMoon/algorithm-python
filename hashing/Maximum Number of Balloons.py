@@ -41,6 +41,8 @@ class Solution:
         return self.findMaxNumberOfPattern(text, pattern)
 
     def findMaxNumberOfPattern(self, text: str, pattern: str):
+        freq_in_text = [0] * 26
+        freq_in_pattern = [0] * 26
         return 1
 
 
