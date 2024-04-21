@@ -43,6 +43,12 @@ class Solution:
     def findMaxNumberOfPattern(self, text: str, pattern: str):
         freq_in_text = [0] * 26
         freq_in_pattern = [0] * 26
+
+        for i in range(freq_in_text):
+            freq_in_text[i] += 1
+
+        for i in range(freq_in_pattern):
+
         return 1
 
 
