@@ -44,10 +44,11 @@ class Solution:
         freq_in_text = [0] * 26
         freq_in_pattern = [0] * 26
 
-        for i in range(freq_in_text):
-            freq_in_text[i] += 1
+        for c in range(freq_in_text):
+            freq_in_text[ord(c) - ord('a')] += 1
 
-        for i in range(freq_in_pattern):
+        for c in range(freq_in_pattern):
+            freq_in_pattern[ord(c) - ord('a')] += 1
 
         return 1
 
