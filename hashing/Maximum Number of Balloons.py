@@ -41,16 +41,23 @@ class Solution:
         return self.findMaxNumberOfPattern(text, pattern)
 
     def findMaxNumberOfPattern(self, text: str, pattern: str):
+        print(f"1 :{10 / 3}")
+        print(f"2 :{10 // 3}")
         freq_in_text = [0] * 26
         freq_in_pattern = [0] * 26
 
-        for c in range(freq_in_text):
+        for c in text:
             freq_in_text[ord(c) - ord('a')] += 1
 
-        for c in range(freq_in_pattern):
+        for c in pattern:
             freq_in_pattern[ord(c) - ord('a')] += 1
 
-        return 1
+        answer = float('inf')
+        for i in range(26):
+            if freq_in_pattern[i] > 0:
+                answer = min(answer, freq_in_text[i] // freq_in_pattern[i])
+
+        return answer
 
 
 def test_maxNumberOfBalloons():
