@@ -31,8 +31,8 @@ class Solution:
             elif element == "n":
                 n_count += 1
 
-        l_count /= 2
-        o_count /= 2
+        l_count //= 2
+        o_count //= 2
 
         return min(b_count, min(a_count, min(l_count, min(o_count, n_count))))
 
@@ -41,8 +41,6 @@ class Solution:
         return self.findMaxNumberOfPattern(text, pattern)
 
     def findMaxNumberOfPattern(self, text: str, pattern: str):
-        print(f"1 :{10 / 3}")
-        print(f"2 :{10 // 3}")
         freq_in_text = [0] * 26
         freq_in_pattern = [0] * 26
 
