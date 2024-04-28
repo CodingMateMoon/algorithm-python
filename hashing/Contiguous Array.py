@@ -10,7 +10,11 @@ class Solution:
             for end in range(start, len(nums)):
                 if nums[end] == 0:
                     zeroes += 1
-
+                else:
+                    ones += 1
+                if zeroes == ones:
+                    maxlen = max(maxlen, end - start + 1)
+        return maxlen
 
 
 def test_findMaxLength():
