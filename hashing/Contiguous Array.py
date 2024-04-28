@@ -3,14 +3,15 @@ from typing import List
 # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4845/
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        zero_count = one_count = 0
-        for num in nums:
-            if num == 0:
-                zero_count += 1
-            elif num == 1:
-                one_count += 1
+        maxlen = 0
+        for start in range(len(nums)):
+            zeroes = 0
+            ones = 0
+            for end in range(start, len(nums)):
+                if nums[end] == 0:
+                    zeroes += 1
 
-        return min(zero_count, one_count) * 2
+
 
 def test_findMaxLength():
     solution = Solution()
