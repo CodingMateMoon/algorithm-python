@@ -2,7 +2,7 @@ from typing import List
 
 # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4845/
 class Solution:
-    def findMaxLength(self, nums: List[int]) -> int:
+    def findMaxLength_1(self, nums: List[int]) -> int:
         maxlen = 0
         for start in range(len(nums)):
             zeroes = 0
@@ -15,6 +15,7 @@ class Solution:
                 if zeroes == ones:
                     maxlen = max(maxlen, end - start + 1)
         return maxlen
+    def findMaxLength(self, nums: List[int]) -> int:
 
 
 def test_findMaxLength():
@@ -24,5 +25,7 @@ def test_findMaxLength():
     """
     assert solution.findMaxLength([0, 1]) == 2
     assert solution.findMaxLength([0, 1, 0]) == 2
+
+    # 0 1 1 0
     assert solution.findMaxLength([0,1,1,0,1,1,1,0]) == 4
 
