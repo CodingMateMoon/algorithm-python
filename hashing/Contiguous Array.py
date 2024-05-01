@@ -16,6 +16,8 @@ class Solution:
                     maxlen = max(maxlen, end - start + 1)
         return maxlen
     def findMaxLength(self, nums: List[int]) -> int:
+        arr = [-2] * (len(nums) * 2 + 1)
+        arr[len(nums)] = -1
 
 
 def test_findMaxLength():
