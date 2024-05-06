@@ -6,8 +6,9 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         answer = []
         for str in strs:
-            for char in str:
-                print(f"{str}: {char}")
+            sorted_string = ''.join(sorted(str))
+            print(f"{str} : {sorted_string}")
+
 
         return None
 
