@@ -5,9 +5,10 @@ from typing import List
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         answer = []
-        for str in strs:
-            sorted_string = ''.join(sorted(str))
-            print(f"{str} : {sorted_string}")
+        for i in range (len(strs)):
+            sorted_string = ''.join(sorted(strs[i]))
+            for j in range(i + 1, len(strs)):
+                print(f"{strs[i]} : {sorted_string}")
 
 
         return None
