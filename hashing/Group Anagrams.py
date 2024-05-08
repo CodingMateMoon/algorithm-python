@@ -6,12 +6,15 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         answer = []
         for i in range (len(strs)):
-            sorted_string = ''.join(sorted(strs[i]))
+            sorted_string = sorted(strs[i])
+            same_elements = [strs[i]]
             for j in range(i + 1, len(strs)):
-                print(f"{strs[i]} : {sorted_string}")
+                if sorted_string == sorted(strs[j]):
+                    same_elements.append(strs[j])
+                
+            answer.append(same_elements)
 
-
-        return None
+        return answer
 
 def test_groupAnagrams():
     """"
