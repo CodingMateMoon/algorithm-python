@@ -5,13 +5,16 @@ from typing import List
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         answer = []
-        for i in range (len(strs)):
+        length = len(strs)
+        for i in range (length):
             sorted_string = sorted(strs[i])
             same_elements = [strs[i]]
-            for j in range(i + 1, len(strs)):
+            for j in range(i + 1, length):
                 if sorted_string == sorted(strs[j]):
                     same_elements.append(strs[j])
-                
+                    strs.pop(j)
+                    i -= 1
+
             answer.append(same_elements)
 
         return answer
