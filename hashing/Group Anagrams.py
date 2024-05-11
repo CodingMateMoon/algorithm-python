@@ -9,7 +9,8 @@ class Solution:
         isUsed = [False] * length
         for i in range (length):
             sorted_string = sorted(strs[i])
-            same_elements = [strs[i]]
+            if isUsed[i] is False:
+                same_elements = [strs[i]]
             for j in range(i + 1, length):
                 if sorted_string == sorted(strs[j]) and isUsed[j] is False:
                     same_elements.append(strs[j])
