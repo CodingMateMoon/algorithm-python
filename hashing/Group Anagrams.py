@@ -6,14 +6,14 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         answer = []
         length = len(strs)
+        isUsed = [False] * length
         for i in range (length):
             sorted_string = sorted(strs[i])
             same_elements = [strs[i]]
             for j in range(i + 1, length):
-                if sorted_string == sorted(strs[j]):
+                if sorted_string == sorted(strs[j]) and isUsed[j] is False:
                     same_elements.append(strs[j])
-                    strs.pop(j)
-                    i -= 1
+                    isUsed[j] = True
 
             answer.append(same_elements)
 
