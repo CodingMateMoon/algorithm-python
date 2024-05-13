@@ -1,9 +1,10 @@
 # https://leetcode.com/problems/group-anagrams/description/
+import collections
 from typing import List
 
 
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams_1(self, strs: List[str]) -> List[List[str]]:
         answer = []
         length = len(strs)
         isUsed = [False] * length
@@ -21,6 +22,11 @@ class Solution:
                 answer.append(same_elements)
 
         return answer
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        answer = {}
+        for s in strs:
+            answer[tuple(sorted(s))].append(s)
+        return answer.values()
 
 def test_groupAnagrams():
     """"
