@@ -28,9 +28,13 @@ class Solution:
             answer[tuple(sorted(s))].append(s)
         return answer.values()
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        answer = {}
+        answer = collections.defaultdict(list)
         for s in strs:
             count = [0] * 26
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+            answer[tuple(count)].append(s)
+        return answer.values()
 
 def test_groupAnagrams():
     """"
