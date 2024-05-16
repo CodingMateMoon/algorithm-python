@@ -22,11 +22,15 @@ class Solution:
                 answer.append(same_elements)
 
         return answer
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams_1(self, strs: List[str]) -> List[List[str]]:
         answer = collections.defaultdict(list)
         for s in strs:
             answer[tuple(sorted(s))].append(s)
         return answer.values()
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        answer = {}
+        for s in strs:
+            count = [0] * 26
 
 def test_groupAnagrams():
     """"
