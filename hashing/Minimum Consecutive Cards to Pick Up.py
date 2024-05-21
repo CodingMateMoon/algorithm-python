@@ -4,13 +4,14 @@ from typing import List
 # https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/description/
 class Solution:
     def minimumCardPickup(self, cards: List[int]) -> int:
-        return 4
+        for element in cards:
+            print(f"test : {element}")
 
 
 def minimumCardPickup():
     """
     1 <= cards.length <= 105
-0 <= cards[i] <= 106
+    0 <= cards[i] <= 106
  3, 4, 2, 3
  4, 2, 3, 4 등 값이 같은 숫자가 있는 최소 부분 집합
     """
