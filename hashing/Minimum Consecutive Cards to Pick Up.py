@@ -4,11 +4,13 @@ from typing import List
 # https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/description/
 class Solution:
     def minimumCardPickup(self, cards: List[int]) -> int:
+        elements_count = {}
         for element in cards:
-            print(f"test : {element}")
+            elements_count[element] = elements_count.get(element, 0) + 1
+            print(f"test : {element} : {elements_count[element]}")
 
 
-def minimumCardPickup():
+def test_minimumCardPickup():
     """
     1 <= cards.length <= 105
     0 <= cards[i] <= 106
