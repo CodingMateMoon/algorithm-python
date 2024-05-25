@@ -7,6 +7,8 @@ class Solution:
         elements_count = {}
         for element in cards:
             elements_count[element] = elements_count.get(element, 0) + 1
+            if elements_count[element] == 2:
+                print(f"{element} count : {elements_count[element]}")
             print(f"test : {element} : {elements_count[element]}")
 
 
