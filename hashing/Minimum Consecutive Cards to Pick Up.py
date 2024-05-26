@@ -5,11 +5,14 @@ from typing import List
 class Solution:
     def minimumCardPickup(self, cards: List[int]) -> int:
         elements_count = {}
-        for element in cards:
-            elements_count[element] = elements_count.get(element, 0) + 1
-            if elements_count[element] == 2:
-                print(f"{element} count : {elements_count[element]}")
-            print(f"test : {element} : {elements_count[element]}")
+        index = -1
+        max_length = -1
+        for i in range(len(cards)):
+            elements_count[cards[i]] = elements_count.get(cards[i], 0) + 1
+            if elements_count[cards[i]] == 2:
+                index = i
+                print(f"{cards[i]} count : {elements_count[cards[i]]}")
+            print(f"test : {cards[i]} : {elements_count[cards[i]]}")
 
 
 def test_minimumCardPickup():
