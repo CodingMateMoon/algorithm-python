@@ -10,9 +10,9 @@ class Solution:
         for i in range(len(cards)):
             elements_count[cards[i]] = elements_count.get(cards[i], 0) + 1
             if elements_count[cards[i]] == 2:
-                if index == -1:
-                    index = i
-                    continue
+                for j in range(len(cards)):
+                    if cards[j] == cards[i]:
+                        index = j
                 max_length = max(i - index, max_length)
                 print(f"{cards[i]} count : {elements_count[cards[i]]}/ max_length : {max_length} / i : {i}, index : {index}")
             print(f"test : {cards[i]} : {elements_count[cards[i]]} / i : {i}")
