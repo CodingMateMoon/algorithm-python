@@ -12,10 +12,10 @@ class Solution:
             if elements_count[cards[i]] == 2:
                 for j in range(len(cards)):
                     if cards[j] == cards[i]:
-                        index = j
-                max_length = max(i - index, max_length)
+                        max_length = max(i - j + 1, max_length)
                 print(f"{cards[i]} count : {elements_count[cards[i]]}/ max_length : {max_length} / i : {i}, index : {index}")
             print(f"test : {cards[i]} : {elements_count[cards[i]]} / i : {i}")
+        return max_length
 
 
 def test_minimumCardPickup():
@@ -29,3 +29,4 @@ def test_minimumCardPickup():
     solution = Solution()
     assert solution.minimumCardPickup([3, 4, 2, 3, 4, 7]) == 4
     assert solution.minimumCardPickup([1, 0, 5, 3]) == -1
+    assert solution.minimumCardPickup([70,37,70,41,1,62,71,49,38,50,29,76,29,41,22,66,88,18,85,53]) == 3
