@@ -4,7 +4,7 @@ from typing import List
 
 # https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up/description/
 class Solution:
-    def minimumCardPickup(self, cards: List[int]) -> int:
+    def minimumCardPickup_1(self, cards: List[int]) -> int:
         elements_count = {}
         index = -1
         min_length = -1
@@ -25,6 +25,18 @@ class Solution:
             print(f"test : {cards[i]} : {elements_count[cards[i]]} / i : {i}")
 
         return min_length
+    def minimumCardPickup(self, cards: List[int]) -> int:
+        if len(set(cards)) == len(cards):
+            return -1
+        card_position = {}
+        min_length = 1000000
+        for i in range(len(cards)):
+            if cards[i] not in card_position:
+                card_position[cards[i]] = i
+            else:
+                min_length = min(min_length, i - card_position[cards[i]])
+                card_position[cards[i]] = i
+        return min_length + 1
 
 
 def test_minimumCardPickup():
