@@ -1,11 +1,14 @@
 #https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4664/
 class Solution:
-    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+    def numJewelsInStones_1(self, jewels: str, stones: str) -> int:
         answer = 0
         for stone in stones:
             if stone in jewels:
                 answer += 1
         return answer
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        return sum(s in jewels for s in stones)
+
 
 def test_numJewelsInStones():
     """
