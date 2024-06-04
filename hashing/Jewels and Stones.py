@@ -6,9 +6,12 @@ class Solution:
             if stone in jewels:
                 answer += 1
         return answer
-    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+    def numJewelsInStones_2(self, jewels: str, stones: str) -> int:
         return sum(s in jewels for s in stones)
 
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        Jset = set(jewels)
+        return sum(s in Jset for s in stones)
 
 def test_numJewelsInStones():
     """
