@@ -15,3 +15,6 @@ s consists of English letters, digits, symbols and spaces.
     assert solution.lengthOfLongestSubstring("abcabcbb") == 3
     #The answer is "b", with the length of 1.
     assert solution.lengthOfLongestSubstring("bbbbb") == 1
+    #The answer is "wke", with the length of 3.
+    # Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+    assert solution.lengthOfLongestSubstring("pwwkew") == 3
