@@ -1,6 +1,11 @@
 # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4690/
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        max_length = 0
+        before_element = s[0]
+        for i in range(1, len(s)):
+            
+
         return 3
 
 def test_lengthOfLongestSubstring():
