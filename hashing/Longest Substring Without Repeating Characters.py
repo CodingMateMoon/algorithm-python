@@ -4,6 +4,9 @@ class Solution:
         max_length = 0
         before_element = s[0]
         for i in range(1, len(s)):
+            if before_element != s[i]:
+                
+
             
 
         return 3
