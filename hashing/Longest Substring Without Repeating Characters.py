@@ -8,16 +8,11 @@ class Solution:
             if before_element != s[i]:
                 length += 1
                 before_element = s[i]
+                print(f"before : {before_element} / length : {length}")
                 continue
             max_length = max(max_length, length)
             length = 0
-
-
-                
-
-            
-
-        return 3
+        return max_length
 
 def test_lengthOfLongestSubstring():
     solution = Solution()
@@ -25,7 +20,7 @@ def test_lengthOfLongestSubstring():
     Given a string s, find the length of the longest substring without repeating characters.
     0 <= s.length <= 5 * 104
 s consists of English letters, digits, symbols and spaces.
-    연속된 문자로 가장 긴 것 구하기. 현재 커서 기준으로 다음 문자가 다를 경우 length를 증가시키고 같은 문자가 나올 경우 max(length, max_length) 저장
+    연속된 문자로 중복 없이 가장 긴 것 구하기. 현재 커서 기준으로 다음 문자가 다를 경우 length를 증가시키고 같은 문자가 나올 경우 max(length, max_length) 저장
     """
 
     #The answer is "abc", with the length of 3.
