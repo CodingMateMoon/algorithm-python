@@ -3,15 +3,15 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max_length = 0
         length = 0
-        before_element = s[0]
+        before_element = [s[0]]
         for i in range(1, len(s)):
-            if before_element != s[i]:
+            if s[i] not in before_element:
                 length += 1
-                before_element = s[i]
+                before_element.append(s[i])
                 print(f"before : {before_element} / length : {length}")
                 continue
-            max_length = max(max_length, length)
-            length = 0
+            max_length = max(max_length, len(before_element))
+            before_element = []
         return max_length
 
 def test_lengthOfLongestSubstring():
