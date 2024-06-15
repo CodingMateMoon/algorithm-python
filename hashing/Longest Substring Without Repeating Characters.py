@@ -2,13 +2,13 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max_length = 0
-        length = 0
-        before_element = [s[0]]
-        for i in range(1, len(s)):
+        before_element = []
+        for i in range(len(s)):
             if s[i] not in before_element:
-                length += 1
                 before_element.append(s[i])
-                print(f"before : {before_element} / length : {length}")
+                print(f"before : {before_element} / length : {len(before_element)} / max_length : {max_length}")
+                if i == len(s) - 1:
+                    return max(max_length, len(before_element))
                 continue
             max_length = max(max_length, len(before_element))
             before_element = []
