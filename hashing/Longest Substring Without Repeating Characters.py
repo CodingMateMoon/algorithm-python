@@ -11,7 +11,7 @@ class Solution:
                     return max(max_length, len(before_element))
                 continue
             max_length = max(max_length, len(before_element))
-            before_element = []
+            before_element = [s[i]]
         return max_length
 
 def test_lengthOfLongestSubstring():
