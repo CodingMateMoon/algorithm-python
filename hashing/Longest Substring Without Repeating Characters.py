@@ -31,3 +31,4 @@ s consists of English letters, digits, symbols and spaces.
     # Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
     assert solution.lengthOfLongestSubstring("pwwkew") == 3
     assert solution.lengthOfLongestSubstring("aab") == 2
+    assert solution.lengthOfLongestSubstring("dvdf") == 3
