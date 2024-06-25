@@ -1,6 +1,6 @@
 # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4690/
 class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    def lengthOfLongestSubstring_1(self, s: str) -> int:
         max_length = 0
         before_element = []
         for i in range(len(s)):
@@ -21,6 +21,9 @@ class Solution:
             max_length = max(max_length, len(before_element))
 
         return max_length
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # sliding window
+        return 0
 
 def test_lengthOfLongestSubstring():
     solution = Solution()
