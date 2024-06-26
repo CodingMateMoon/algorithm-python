@@ -23,6 +23,8 @@ class Solution:
         return max_length
     def lengthOfLongestSubstring(self, s: str) -> int:
         # sliding window
+        left = right = 0
+
         return 0
 
 def test_lengthOfLongestSubstring():
