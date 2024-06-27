@@ -23,7 +23,9 @@ class Solution:
         return max_length
     def lengthOfLongestSubstring(self, s: str) -> int:
         # sliding window
+        char_count = {}
         left = right = 0
+        result = 0
 
         return 0
 
