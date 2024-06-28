@@ -26,6 +26,8 @@ class Solution:
         char_count = {}
         left = right = 0
         result = 0
+        while right < len(s):
+            before = s[right]
 
         return 0
 
