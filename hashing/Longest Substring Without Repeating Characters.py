@@ -1,4 +1,7 @@
 # https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/705/hashing/4690/
+from collections import Counter
+
+
 class Solution:
     def lengthOfLongestSubstring_1(self, s: str) -> int:
         max_length = 0
@@ -23,11 +26,14 @@ class Solution:
         return max_length
     def lengthOfLongestSubstring(self, s: str) -> int:
         # sliding window
-        char_count = {}
+        char_count = Counter()
         left = right = 0
         result = 0
         while right < len(s):
             before = s[right]
+            char_count[before] += 1
+
+            right += 1
 
         return 0
 
