@@ -33,9 +33,12 @@ class Solution:
             before = s[right]
             char_count[before] += 1
 
+            if char_count[before] > 1:
+                left += 1
+            result = max(result, right - left + 1)
             right += 1
 
-        return 0
+        return right
 
 def test_lengthOfLongestSubstring():
     solution = Solution()
