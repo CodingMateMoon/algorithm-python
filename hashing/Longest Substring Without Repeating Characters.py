@@ -37,7 +37,8 @@ class Solution:
                 left += 1
             result = max(result, right - left + 1)
             right += 1
-
+            for i in range(left, right):
+                print(f"{i}:{s[i]}")
         return right
 
 def test_lengthOfLongestSubstring():
