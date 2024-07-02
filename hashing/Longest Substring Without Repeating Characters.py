@@ -33,7 +33,9 @@ class Solution:
             before = s[right]
             char_count[before] += 1
 
-            if char_count[before] > 1:
+            while char_count[before] > 1:
+                l = s[left]
+                char_count[l] -= 1
                 left += 1
             result = max(result, right - left + 1)
             right += 1
