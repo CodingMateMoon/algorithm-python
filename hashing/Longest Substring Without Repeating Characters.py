@@ -41,7 +41,7 @@ class Solution:
             right += 1
             for i in range(left, right):
                 print(f"{i}:{s[i]}")
-        return right
+        return result
 
 def test_lengthOfLongestSubstring():
     solution = Solution()
