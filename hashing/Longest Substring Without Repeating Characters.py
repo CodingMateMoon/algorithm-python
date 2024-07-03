@@ -24,8 +24,9 @@ class Solution:
             max_length = max(max_length, len(before_element))
 
         return max_length
-    def lengthOfLongestSubstring(self, s: str) -> int:
-        # sliding window
+    def lengthOfLongestSubstring_2(self, s: str) -> int:
+        # sliding window O(2n) = O(n)
+        # Space : O(min(size of string, size of charset))
         char_count = Counter()
         left = right = 0
         result = 0
@@ -42,6 +43,7 @@ class Solution:
             for i in range(left, right):
                 print(f"{i}:{s[i]}")
         return result
+    def lengthOfLongestSubstring(self, s: str) -> int:
 
 def test_lengthOfLongestSubstring():
     solution = Solution()
