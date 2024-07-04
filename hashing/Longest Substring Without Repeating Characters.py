@@ -44,6 +44,8 @@ class Solution:
                 print(f"{i}:{s[i]}")
         return result
     def lengthOfLongestSubstring(self, s: str) -> int:
+        #char_index값을 저장 후 중복되는 char에 대해 해당 index 위치 다음부터 left 새로 시작.
+        char_index = {}
 
 def test_lengthOfLongestSubstring():
     solution = Solution()
