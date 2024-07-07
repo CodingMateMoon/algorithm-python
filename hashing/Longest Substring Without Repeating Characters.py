@@ -48,6 +48,10 @@ class Solution:
         answer = left = 0
         char_index = {}
 
+        for i in range(len(s)):
+            if s[i] not in char_index:
+
+
 def test_lengthOfLongestSubstring():
     solution = Solution()
     """
