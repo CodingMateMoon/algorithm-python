@@ -49,7 +49,8 @@ class Solution:
         char_index = {}
 
         for i in range(len(s)):
-            if s[i] not in char_index:
+            if s[i] in char_index:
+                left = max(char_index[s[i]], left)
 
 
 def test_lengthOfLongestSubstring():
