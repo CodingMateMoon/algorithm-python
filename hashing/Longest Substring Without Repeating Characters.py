@@ -45,12 +45,14 @@ class Solution:
         return result
     def lengthOfLongestSubstring(self, s: str) -> int:
         #char_index값을 저장 후 중복되는 char에 대해 해당 index 위치 다음부터 left 새로 시작.
-        answer = left = 0
+        result = left = 0
         char_index = {}
 
-        for i in range(len(s)):
-            if s[i] in char_index:
-                left = max(char_index[s[i]], left)
+        for right in range(len(s)):
+            if s[right] in char_index:
+                left = max(char_index[s[right]], left)
+            result = max(result, right - left + 1)
+
 
 
 def test_lengthOfLongestSubstring():
