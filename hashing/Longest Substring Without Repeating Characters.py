@@ -51,7 +51,10 @@ class Solution:
         for right in range(len(s)):
             if s[right] in char_index:
                 left = max(char_index[s[right]], left)
+            char_index[s[right]] = right
             result = max(result, right - left + 1)
+
+        return result
 
 
 
