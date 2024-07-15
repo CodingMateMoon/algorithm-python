@@ -11,6 +11,7 @@ class ListNode:
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
 
+
 """
 3 -> 2 -> 0 -> -4
    -4->2
@@ -23,4 +24,10 @@ Explanation: There is a cycle in the linked list, where the tail connects to the
 Input: head = [1,2], pos = 0
 Output: true
 Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
+
+Constraints:
+
+The number of the nodes in the list is in the range [0, 10^4].
+-10^5 <= Node.val <= 10^5
+pos is -1 or a valid index in the linked-list.
 """
