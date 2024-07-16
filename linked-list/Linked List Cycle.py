@@ -10,6 +10,11 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        node_info = {}
+        while(True):
+            if head.val not in node_info:
+                
+
 
 
 """
