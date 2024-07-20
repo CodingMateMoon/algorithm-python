@@ -13,11 +13,12 @@ class Solution:
         node_info = {}
         index = 0
         while(head):
-            if head.val not in node_info:
-                node_info[head.val] = index
+            if head.val in node_info:
+                return True
+            node_info[head.val] = index
             index += 1
             head = head.next
-                
+        return False
 
 
 
