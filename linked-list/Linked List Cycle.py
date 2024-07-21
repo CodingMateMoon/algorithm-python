@@ -11,12 +11,12 @@ class ListNode:
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         node_info = {}
-        index = 0
+        pos = 0
         while(head):
             if head.val in node_info:
                 return True
-            node_info[head.val] = index
-            index += 1
+            node_info[head.val] = pos
+            pos += 1
             head = head.next
         return False
 
