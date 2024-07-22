@@ -12,7 +12,7 @@ class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         node_info = {}
         pos = 0
-        while(head):
+        while head is not None:
             if head.val in node_info:
                 return True
             node_info[head.val] = pos
