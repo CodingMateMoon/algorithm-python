@@ -10,14 +10,13 @@ class ListNode:
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        node_info = {}
-        pos = 0
-        while head is not None:
-            if head.val in node_info:
+        node_info = set()
+        current_node = head
+        while current_node is not None:
+            if current_node in node_info:
                 return True
-            node_info[head.val] = pos
-            pos += 1
-            head = head.next
+            node_info.add(current_node)
+            current_node = current_node.next
         return False
 
 
