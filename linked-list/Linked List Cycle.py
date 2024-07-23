@@ -9,7 +9,7 @@ class ListNode:
         self.next = None
 
 class Solution:
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    def hasCycle_1(self, head: Optional[ListNode]) -> bool:
         node_info = set()
         current_node = head
         while current_node is not None:
@@ -18,6 +18,9 @@ class Solution:
             node_info.add(current_node)
             current_node = current_node.next
         return False
+
+    # slow pointer and fast pointer
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
 
 
 
