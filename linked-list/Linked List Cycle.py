@@ -21,6 +21,9 @@ class Solution:
 
     # slow pointer and fast pointer
     def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if head is None:
+            return False
+        slow = head
 
 
 
