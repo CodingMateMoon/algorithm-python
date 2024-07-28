@@ -20,6 +20,13 @@ class Solution:
         return False
 
     # slow pointer and fast pointer
+    """
+    case 1 : no cycle
+    fast pointer가 먼저 끝에 도달하고 list의 길이만큼 수행시간 소요 O(n)
+    
+    case 2 : cycle
+    fast pointer는 2 step, slow는 1 step이므로 전체 length N + cycle 길이 K만큼 시간 소요 O(N+K)
+    """
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         if head is None:
             return False
