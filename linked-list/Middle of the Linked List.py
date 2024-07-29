@@ -1,8 +1,9 @@
+# https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-data-structures-and-algorithms/704/linked-lists/4660/
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 """
 Given the head of a singly linked list, return the middle node of the linked list.
 
@@ -17,5 +18,8 @@ Constraints:
 The number of nodes in the list is in the range [1, 100].
 1 <= Node.val <= 100
 """
+from typing import Optional
+
+
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
