@@ -27,3 +27,6 @@ from typing import Optional
 
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        current_node = head
+        while(current_node is not None):
+
