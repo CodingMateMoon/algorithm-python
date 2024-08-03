@@ -28,8 +28,12 @@ from typing import Optional
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         current_node = head
+        length = 0
         while current_node is not None:
             current_node = current_node.next
+            length += 1
+
+
 
         return current_node
 
