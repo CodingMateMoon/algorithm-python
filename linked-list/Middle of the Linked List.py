@@ -33,7 +33,16 @@ class Solution:
             current_node = current_node.next
             length += 1
 
+        print(f"length : {length}")
+        for i in range(0, length // 2 + 1):
+            print(f"i : {i}")
+
 
 
         return current_node
+
+def test_middleNode():
+    solution = Solution()
+    solution.middleNode(ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None))))))
+
 
