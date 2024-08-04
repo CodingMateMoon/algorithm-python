@@ -32,13 +32,11 @@ class Solution:
         while current_node is not None:
             current_node = current_node.next
             length += 1
-
-        print(f"length : {length}")
-        for i in range(0, length // 2 + 1):
-            print(f"i : {i}")
-
-
-
+        #print(f"length : {length}")
+        current_node = head
+        for i in range(0, length // 2):
+            current_node = current_node.next
+            #print(f"i : {i}")
         return current_node
 
 def test_middleNode():
