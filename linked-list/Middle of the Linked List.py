@@ -26,7 +26,7 @@ from typing import Optional
 
 
 class Solution:
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def middleNode_1(self, head: Optional[ListNode]) -> Optional[ListNode]:
         current_node = head
         length = 0
         while current_node is not None:
@@ -38,6 +38,11 @@ class Solution:
             current_node = current_node.next
             #print(f"i : {i}")
         return current_node
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        arr = [head]
+        while arr[-1].next:
+            arr.append(arr[-1].next)
+        return arr[len(arr) // 2]
 
 def test_middleNode():
     solution = Solution()
