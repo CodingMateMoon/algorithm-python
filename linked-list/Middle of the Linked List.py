@@ -39,6 +39,9 @@ class Solution:
             #print(f"i : {i}")
         return current_node
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        """"
+        arr[-1] : array의 가장 마지막 요소 가져오기
+        """
         arr = [head]
         while arr[-1].next:
             arr.append(arr[-1].next)
