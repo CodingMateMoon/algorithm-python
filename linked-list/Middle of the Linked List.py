@@ -38,7 +38,7 @@ class Solution:
             current_node = current_node.next
             #print(f"i : {i}")
         return current_node
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def middleNode_2(self, head: Optional[ListNode]) -> Optional[ListNode]:
         """"
         arr[-1] : array의 가장 마지막 요소 가져오기
         """
@@ -46,6 +46,13 @@ class Solution:
         while arr[-1].next:
             arr.append(arr[-1].next)
         return arr[len(arr) // 2]
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            print(f"slow : {slow.val} / fast : {fast.val}")
+        return slow
 
 def test_middleNode():
     solution = Solution()
