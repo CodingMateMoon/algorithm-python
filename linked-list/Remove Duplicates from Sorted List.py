@@ -20,3 +20,6 @@ The list is guaranteed to be sorted in ascending order.
 """
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        val_check = []
+        current_node = head
+        while current_node.next is not None:
