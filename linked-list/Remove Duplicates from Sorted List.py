@@ -23,3 +23,5 @@ class Solution:
         val_check = []
         current_node = head
         while current_node.next is not None:
+            if current_node.val in val_check:
+                
