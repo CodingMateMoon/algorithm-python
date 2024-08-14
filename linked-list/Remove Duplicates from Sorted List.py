@@ -26,5 +26,11 @@ class Solution:
         previous_node = head
         while current_node.next is not None:
             if current_node.val in val_check:
-                current_node.
-                
+                previous_node.next = previous_node.next.next
+                current_node = previous_node.next
+                continue
+            current_node = current_node.next
+            previous_node = previous_node.next
+
+        return head
+
