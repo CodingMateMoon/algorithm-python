@@ -25,9 +25,10 @@ Output:
 [1,2,3,3]
 Expected:
 [1,2,3]
+마지막 인덱스 요소 처리
 """
 class Solution:
-    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def deleteDuplicates_1(self, head: Optional[ListNode]) -> Optional[ListNode]:
         val_check = [head.val]
         current_node = head.next
         previous_node = head
@@ -40,5 +41,14 @@ class Solution:
             current_node = current_node.next
             previous_node = previous_node.next
 
+        return head
+
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        current = head
+        while current is not None and current.next is not None:
+            if current.val == current.next.val:
+                current.next = current.next.next
+                continue
+            current = current.next
         return head
 
