@@ -19,3 +19,10 @@ class ListNode:
         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        current = reverse = head
+        while current is not None:
+            reverse = current.next
+            reverse.next = current
+            current = current.next
+
+
