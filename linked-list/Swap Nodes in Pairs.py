@@ -18,6 +18,7 @@ Constraints:
 
 The number of nodes in the list is in the range [0, 100].
 0 <= Node.val <= 100
+index 0<->1, 2 <-> 3, 4 <->5 swap
 """
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -25,3 +26,4 @@ class ListNode:
         self.next = next
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        cur = head
