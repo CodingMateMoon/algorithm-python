@@ -27,3 +27,8 @@ class ListNode:
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         cur = head
+        while cur is not None and cur.next is not None:
+            temp = cur.next.next
+            cur.next.next = cur
+            cur = temp
+        return head
