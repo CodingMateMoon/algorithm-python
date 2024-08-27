@@ -31,4 +31,9 @@ class Solution:
             temp = cur.next.next
             cur.next.next = cur
             cur = temp
+            print(f"cur value : {cur.val}")
         return head
+
+def test_swapPairs():
+    solution = Solution()
+    solution.swapPairs(ListNode(1, ListNode(2, ListNode(3, ListNode(4, None)))))
