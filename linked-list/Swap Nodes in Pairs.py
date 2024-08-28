@@ -19,6 +19,8 @@ Constraints:
 The number of nodes in the list is in the range [0, 100].
 0 <= Node.val <= 100
 index 0<->1, 2 <-> 3, 4 <->5 swap
+1 0 2 3
+1 -> 0-> 2
 """
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -30,7 +32,7 @@ class Solution:
         while cur is not None and cur.next is not None:
             temp = cur.next.next
             cur.next.next = cur
-            cur = temp
+            cur.next = temp
             print(f"cur value : {cur.val}")
         return head
 
