@@ -33,6 +33,7 @@ class Solution:
             temp = cur.next.next
             cur.next.next = cur
             cur.next = temp
+            cur = temp
             print(f"cur value : {cur.val}")
         return head
 
