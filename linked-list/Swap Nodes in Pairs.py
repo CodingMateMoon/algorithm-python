@@ -27,7 +27,7 @@ class ListNode:
         self.val = val
         self.next = next
 class Solution:
-    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def swapPairs_1(self, head: Optional[ListNode]) -> Optional[ListNode]:
         cur = head
         while cur is not None and cur.next is not None:
             temp = cur.next.next
@@ -36,6 +36,10 @@ class Solution:
             cur = temp
             print(f"cur value : {cur.val}")
         return head
+
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not head or not head.next:
+            return head
 
 def test_swapPairs():
     solution = Solution()
