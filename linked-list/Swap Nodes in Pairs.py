@@ -48,7 +48,17 @@ class Solution:
         second_node.next = first_node
         return second_node
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode(-1)
+        dummy.next = head
+
+        prev_node = dummy
+
         while head and head.next:
+            first_node = head
+            second_node = first_node.next
+
+            prev_node.next = second_node
+
 
 def test_swapPairs():
     solution = Solution()
