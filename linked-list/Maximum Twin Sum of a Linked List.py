@@ -16,6 +16,8 @@ Explanation:
 Nodes 0 and 1 are the twins of nodes 3 and 2, respectively. All have twin sum = 6.
 There are no other nodes with twins in the linked list.
 Thus, the maximum twin sum of the linked list is 6.
+index 합이 n-1. n=4 -> 0 + 3 = 3, 1 + 2 = 3 [n-1]
+twin 노드 value 합이 가장 큰 경우 구하기
 """
 class ListNode:
     def __init__(self, val=0, next=None):
