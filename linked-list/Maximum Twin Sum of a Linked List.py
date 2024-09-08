@@ -33,6 +33,7 @@ The number of nodes in the list is an even integer in the range [2, 105].
 
 index 합이 n-1. n=4 -> 0 + 3 = 3, 1 + 2 = 3 [n-1]
 twin 노드 value 합이 가장 큰 경우 구하기
+reverse 후 n/2까지 twin 합 중 가장 큰 값 저장
 """
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -40,4 +41,7 @@ class ListNode:
         self.next = next
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
+        prev = None
+        current = head
+        while current:
 
