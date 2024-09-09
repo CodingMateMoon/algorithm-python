@@ -44,4 +44,8 @@ class Solution:
         prev = None
         current = head
         while current:
+            temp = current.next
+            temp.next = prev
+            prev = current
+            current = temp
 
