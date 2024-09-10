@@ -48,4 +48,10 @@ class Solution:
             temp.next = prev
             prev = current
             current = temp
+        return prev
+
+
+def test_pairSum():
+    solution = Solution()
+    solution.pairSum(ListNode(5, ListNode(4, ListNode(2, ListNode(1, None)))))
 
