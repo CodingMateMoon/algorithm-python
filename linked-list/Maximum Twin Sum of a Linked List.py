@@ -45,7 +45,7 @@ class Solution:
         current = head
         while current:
             temp = current.next
-            temp.next = prev
+            current.next = prev
             prev = current
             current = temp
         return prev
