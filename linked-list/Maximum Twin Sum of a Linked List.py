@@ -48,7 +48,15 @@ class Solution:
             current.next = prev
             prev = current
             current = temp
+        self.printNode(prev)
         return prev
+
+    def printNode(self, head: Optional[ListNode]):
+        current = head
+        index = 0
+        while current:
+            print(f"[{index}] : {current.val}")
+            current = current.next
 
 
 def test_pairSum():
