@@ -41,6 +41,13 @@ class ListNode:
         self.next = next
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
+        slow, fast = head, head
+        max = 0
+
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+
         prev = None
         current = head
         while current:
