@@ -49,12 +49,12 @@ class Solution:
             slow = slow.next
 
         prev = None
-        current = head
-        while current:
-            temp = current.next
-            current.next = prev
-            prev = current
-            current = temp
+
+        while slow:
+            temp = slow.next
+            slow.next = prev
+            prev = slow
+            slow = temp
         self.printNode(prev)
         return prev
 
