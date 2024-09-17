@@ -71,7 +71,7 @@ class Solution:
         while current:
             print(f"[{index}] : {current.val}")
             current = current.next
-    def pairSum(self, head: Optional[ListNode]) -> int:
+    def pairSum_2(self, head: Optional[ListNode]) -> int:
         current = head
         values = []
         max_twin_sum = 0
@@ -85,6 +85,21 @@ class Solution:
             i += 1
             j -= 1
         return max_twin_sum
+
+    def pairSum(self, head: Optional[ListNode]) -> int:
+        current = head
+        values = []
+        max_twin_sum = 0
+
+        while current:
+            values.append(current.val)
+            current = current.next
+
+        length = len(values)
+        count = 1
+        while count < (length / 2):
+
+
 
 
 
