@@ -95,9 +95,15 @@ class Solution:
             values.append(current.val)
             current = current.next
 
+        current = head
         length = len(values)
         count = 1
-        while count < (length / 2):
+
+        while count <= (length / 2):
+            max_twin_sum = max(max_twin_sum, current.val + values.pop())
+            current = current.next
+            count += 1
+        return max_twin_sum
 
 
 
