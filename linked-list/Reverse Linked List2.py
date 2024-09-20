@@ -12,6 +12,15 @@ Example 2:
 
 Input: head = [5], left = 1, right = 1
 Output: [5]
+
+Constraints:
+
+The number of nodes in the list is n.
+1 <= n <= 500
+-500 <= Node.val <= 500
+1 <= left <= right <= n
+
+left ~ right 특정 구간만 reverse
 """
 
 class ListNode:
