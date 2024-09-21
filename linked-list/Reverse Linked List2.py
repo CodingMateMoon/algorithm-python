@@ -29,3 +29,15 @@ class ListNode:
         self.next = next
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        current = head
+        before = None
+        index = 1
+        while current:
+            temp = current.next
+            
+def test_reverseBetween():
+    solution = Solution()
+    solution.reverseBetween(ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None))))))
+
+
+
