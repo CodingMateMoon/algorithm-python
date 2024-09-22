@@ -34,10 +34,23 @@ class Solution:
         index = 1
         while current:
             temp = current.next
+            current.next = before
+            before = current
+            current = temp
+        self.printNode(before)
+
+    def printNode(self, head:Optional[ListNode]):
+        current = head
+        index = 1
+        while current:
+            print(f"[{index}] : {current.val}")
+            index += 1
+            current = current.next
+
             
 def test_reverseBetween():
     solution = Solution()
-    solution.reverseBetween(ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None))))))
+    solution.reverseBetween(ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, None))))), 2, 4)
 
 
 
