@@ -33,11 +33,12 @@ class Solution:
         before = None
         index = 1
         while current:
-            temp = current.next
-            current.next = before
-            before = current
-            current = temp
-        self.printNode(before)
+            if left <= index <= right:
+                temp = current.next
+                current.next = before
+                before = current
+                current = temp
+        self.printNode(head)
 
     def printNode(self, head:Optional[ListNode]):
         current = head
