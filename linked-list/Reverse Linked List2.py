@@ -31,13 +31,16 @@ class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         current = head
         before = None
-        index = 1
+        index = 0
         while current:
+            index += 1
             if left <= index <= right:
                 temp = current.next
                 current.next = before
                 before = current
                 current = temp
+                continue
+            current = current.next
         self.printNode(head)
 
     def printNode(self, head:Optional[ListNode]):
