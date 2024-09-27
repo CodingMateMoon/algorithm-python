@@ -31,7 +31,7 @@ class ListNode:
         self.val = val
         self.next = next
 class Solution:
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverseBetween_1(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         current = head
         before = None
         index = 0
@@ -42,6 +42,7 @@ class Solution:
                 current.next = before
                 before = current
                 current = temp
+
                 continue
             current = current.next
         self.printNode(head)
@@ -53,6 +54,11 @@ class Solution:
             print(f"[{index}] : {current.val}")
             index += 1
             current = current.next
+
+    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        if not head:
+            return None
+
 
             
 def test_reverseBetween():
