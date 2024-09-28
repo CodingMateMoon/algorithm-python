@@ -59,6 +59,8 @@ class Solution:
         if not head:
             return None
 
+        left, right = head, head
+
 
             
 def test_reverseBetween():
