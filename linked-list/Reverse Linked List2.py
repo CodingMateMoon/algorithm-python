@@ -60,6 +60,9 @@ class Solution:
             return None
 
         left, right = head, head
+        stop = False
+
+        def recurseAndReverse(right, m, n):
 
 
             
