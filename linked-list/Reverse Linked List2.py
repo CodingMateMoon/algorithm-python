@@ -63,6 +63,11 @@ class Solution:
         stop = False
 
         def recurseAndReverse(right, m, n):
+            nonlocal left, stop
+
+            if n == 1:
+                return
+
 
 
             
