@@ -67,6 +67,10 @@ class Solution:
 
             if n == 1:
                 return
+            right = right.next
+
+            if m > 1:
+                left = left.next
 
 
 
