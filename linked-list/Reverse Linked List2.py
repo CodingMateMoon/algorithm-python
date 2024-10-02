@@ -71,6 +71,10 @@ class Solution:
 
             if m > 1:
                 left = left.next
+            recurseAndReverse(right, m - 1, n - 1)
+
+            if left == right or right.next == left:
+                stop = True
 
 
 
