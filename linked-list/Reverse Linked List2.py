@@ -76,6 +76,9 @@ class Solution:
             if left == right or right.next == left:
                 stop = True
 
+            if not stop:
+                left.val, right.val = right.val, left.val
+
 
 
             
