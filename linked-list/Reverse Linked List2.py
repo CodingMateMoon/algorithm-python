@@ -59,25 +59,29 @@ class Solution:
         if not head:
             return None
 
-        left, right = head, head
+        left_h, right_h = head, head
         stop = False
 
         def recurseAndReverse(right, m, n):
-            nonlocal left, stop
+            nonlocal left_h, stop
 
             if n == 1:
                 return
             right = right.next
 
             if m > 1:
-                left = left.next
+                left_h = left_h.next
             recurseAndReverse(right, m - 1, n - 1)
 
-            if left == right or right.next == left:
+            if left_h == right or right.next == left_h:
                 stop = True
 
             if not stop:
-                left.val, right.val = right.val, left.val
+                left_h.val, right.val = right.val, left_h.val
+                left_h = left_h.next
+
+        recurseAndReverse(right_h, left, right)
+        return head
 
 
 
