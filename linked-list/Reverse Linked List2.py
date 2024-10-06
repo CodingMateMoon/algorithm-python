@@ -55,7 +55,7 @@ class Solution:
             index += 1
             current = current.next
 
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverseBetween_2(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         if not head:
             return None
 
@@ -82,6 +82,11 @@ class Solution:
 
         recurseAndReverse(right_h, left, right)
         return head
+    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        if not head:
+            return None
+
+        cur, prev = head, None
 
 
 
