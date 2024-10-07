@@ -87,6 +87,10 @@ class Solution:
             return None
 
         cur, prev = head, None
+        while left > 1:
+            prev = cur
+            cur = cur.next
+            left, right = left - 1, right - 1
 
 
 
