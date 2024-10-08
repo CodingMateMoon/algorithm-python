@@ -92,6 +92,8 @@ class Solution:
             cur = cur.next
             left, right = left - 1, right - 1
 
+        tail, con = cur, prev
+
 
 
             
