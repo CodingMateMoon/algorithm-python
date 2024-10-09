@@ -94,6 +94,9 @@ class Solution:
 
         tail, con = cur, prev
 
+        while right:
+            third = cur.next
+
 
 
             
