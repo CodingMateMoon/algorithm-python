@@ -96,6 +96,8 @@ class Solution:
 
         while right:
             third = cur.next
+            cur.next = prev
+            prev = cur
 
 
 
