@@ -98,6 +98,8 @@ class Solution:
             third = cur.next
             cur.next = prev
             prev = cur
+            cur = third
+            right -= 1
 
 
 
