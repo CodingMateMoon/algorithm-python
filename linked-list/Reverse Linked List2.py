@@ -101,6 +101,9 @@ class Solution:
             cur = third
             right -= 1
 
+        if con:
+            con.next = prev
+
 
 
             
