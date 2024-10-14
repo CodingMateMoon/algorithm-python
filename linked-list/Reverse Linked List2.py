@@ -103,6 +103,8 @@ class Solution:
 
         if con:
             con.next = prev
+        else:
+            head = prev
 
 
 
