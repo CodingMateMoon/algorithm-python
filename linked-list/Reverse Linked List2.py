@@ -105,6 +105,8 @@ class Solution:
             con.next = prev
         else:
             head = prev
+        tail.next = cur
+        return head
 
 
 
