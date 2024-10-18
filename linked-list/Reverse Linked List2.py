@@ -83,6 +83,11 @@ class Solution:
         recurseAndReverse(right_h, left, right)
         return head
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        """
+        A->B->C / C->B->A
+        prev, cur
+        """
+
 
 
 
