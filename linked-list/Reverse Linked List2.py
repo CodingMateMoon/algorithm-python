@@ -86,7 +86,15 @@ class Solution:
         """
         A->B->C / C->B->A
         prev, cur
+
+        third = cur.next
+        cur.next = prev
+        prev = cur
+        cur = third
+
         """
+        if not head:
+            return None
 
 
 
