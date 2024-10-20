@@ -85,7 +85,9 @@ class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         """
         A->B->C / C->B->A
-        prev, cur
+        2 pointer: prev , cur
+        prev = None
+        cur = head
 
         third = cur.next
         cur.next = prev
