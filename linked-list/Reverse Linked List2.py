@@ -94,6 +94,9 @@ class Solution:
         prev = cur
         cur = third
 
+        left ~ right
+        cur
+
         """
         if not head:
             return None
