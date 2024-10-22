@@ -24,6 +24,8 @@ The number of nodes in the list is n.
 1 <= left <= right <= n
 
 left ~ right 특정 구간만 reverse
+7->/ 9->2->10->1->/ 8->6
+7 <-9<2<-10<-1 8->6
 """
 
 class ListNode:
