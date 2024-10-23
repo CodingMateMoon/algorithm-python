@@ -103,6 +103,8 @@ class Solution:
         if not head:
             return None
 
+        cur, prev = head, None
+
 
 
 
