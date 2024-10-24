@@ -104,6 +104,7 @@ class Solution:
             return None
 
         cur, prev = head, None
+        while left > 1:
 
 
 
