@@ -99,6 +99,13 @@ class Solution:
         left ~ right
         cur
 
+        left ~ right 특정 구간만 reverse
+        7->/ 9->2->10->1->/ 8->6
+        7 <-9<2<-10<-1 8->6
+
+        7 <- 9
+        con <- tail
+
         """
         if not head:
             return None
