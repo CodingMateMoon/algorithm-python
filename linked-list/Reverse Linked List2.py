@@ -112,6 +112,7 @@ class Solution:
 
         cur, prev = head, None
         while left > 1:
+            prev = cur
 
 
 
