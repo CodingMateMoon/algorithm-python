@@ -107,6 +107,8 @@ class Solution:
         7 <- 9
         con <- tail
 
+        7 -> 9(con) -> 2(tail) <- 10 (prev)
+
         """
         if not head:
             return None
