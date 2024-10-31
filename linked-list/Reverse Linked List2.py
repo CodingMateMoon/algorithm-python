@@ -25,7 +25,7 @@ The number of nodes in the list is n.
 
 left ~ right 특정 구간만 reverse
 7->/ 9->2->10->1->/ 8->6
-7 <-9<2<-10<-1 8->6
+7 <-9<-2<-10<-1 8->6
 """
 
 class ListNode:
@@ -100,9 +100,15 @@ class Solution:
         cur
 
         left ~ right 특정 구간만 reverse
-        7->/ 9->2->10->1->/ 8->6
-        7 <-9<2<-10<-1 8->6
-        7->1->10->2->9->8->6
+        7->9(con)/->2->10->1->8/->6
+        7->9-> /2(tail)<-10<-1<-8(prev)/ 6
+        con.next = prev
+        tail.next = cur
+
+        7->9(con)->/8(prev)->1->10->2(tail)->6
+
+
+
 
         7 <- 9
         con <- tail
