@@ -123,6 +123,7 @@ class Solution:
         while left > 1:
             prev = cur
             cur = cur.next
+            left = left - 1
 
 
 
