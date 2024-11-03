@@ -125,6 +125,8 @@ class Solution:
             cur = cur.next
             left = left - 1
 
+        tail, con = cur, prev
+
 
 
 
