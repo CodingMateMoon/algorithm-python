@@ -84,7 +84,7 @@ class Solution:
 
         recurseAndReverse(right_h, left, right)
         return head
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverseBetween_3(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         """
     The number of nodes in the list is n.
     1 <= n <= 500
@@ -154,6 +154,8 @@ class Solution:
             head = prev
         tail.next = cur
         return head
+
+    def reverseBetween_recursive(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
 
 
 
