@@ -86,11 +86,22 @@ class Solution:
         return head
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         """
+    The number of nodes in the list is n.
+    1 <= n <= 500
+    -500 <= Node.val <= 500
+    1 <= left <= right <= n
+
         A->B->C / C->B->A
         2 pointer: prev , cur
         prev = None
         cur = head
 
+        left: 3 / right : 6
+        left: 0 / right : 3
+
+        7->9(prev)->2(cur)->10(third)->1->8->6
+        7->9<-2(prev)->10(cur)->1(third)->8->6
+        7->9<-2<-10(prev)->1(cur)->8(third)->6
         third = cur.next
         cur.next = prev
         prev = cur
@@ -101,9 +112,9 @@ class Solution:
 
         left ~ right 특정 구간만 reverse
         7->9(con)/->2->10->1->8/->6
-        7->9-> /2(tail)<-10<-1<-8(prev)/ 6
+        7->9(con)-> /2(tail)<-10<-1<-8(prev)/ 6
         con.next = prev
-        tail.next = cur
+        tail.next = cur(pre-save third[cur.next])
 
         7->9(con)->/8(prev)->1->10->2(tail)->6
 
@@ -120,12 +131,31 @@ class Solution:
             return None
 
         cur, prev = head, None
+        # 1일 경우 prev = None. 첫번째 노드부터 reverse
         while left > 1:
             prev = cur
             cur = cur.next
-            left = left - 1
+            left, right = left - 1, right - 1
 
         tail, con = cur, prev
+        while right > 1:
+            third = cur.next
+            cur.next = prev
+            prev = cur
+            cur = third
+            right -= 1
+
+        if con:
+            con.next = prev
+        else:
+            # 1->2->3 | prev(None) <- 1(prev) 2(cur) 3(third)
+            # 1<-2 (prev) 3 (cur)
+            # 1<-2<-3(prev)
+            head = prev
+        tail.next = cur
+        return head
+
+
 
 
 
