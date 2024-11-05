@@ -156,6 +156,8 @@ class Solution:
         return head
 
     def reverseBetween_recursive(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        if not head:
+            return None
 
 
 
