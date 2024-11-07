@@ -159,7 +159,8 @@ class Solution:
         if not head:
             return None
 
-        left, right = head, head
+        left_node, right_node = head, head
+        def recurse(right_node, left, right):
 
 
 
