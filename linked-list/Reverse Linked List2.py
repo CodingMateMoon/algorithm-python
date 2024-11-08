@@ -160,7 +160,16 @@ class Solution:
             return None
 
         left_node, right_node = head, head
+        stop = False
+
         def recurse(right_node, left, right):
+            nonlocal left_node, stop
+            if right == 1:
+                return
+
+            if right > 1:
+                right_node = right_node.next
+
 
 
 
