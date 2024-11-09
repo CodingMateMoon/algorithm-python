@@ -170,6 +170,8 @@ class Solution:
             if right > 1:
                 right_node = right_node.next
 
+            recurse(right_node, left - 1, right - 1)
+
 
 
 
