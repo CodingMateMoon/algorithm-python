@@ -172,6 +172,8 @@ class Solution:
 
             recurse(right_node, left - 1, right - 1)
 
+            if left_node == right_node or right_node.next == left_node:
+
 
 
 
