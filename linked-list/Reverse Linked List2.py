@@ -175,6 +175,8 @@ class Solution:
             if left_node == right_node or right_node.next == left_node:
                 stop = True
 
+            if not stop:
+
 
 
 
