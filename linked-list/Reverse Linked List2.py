@@ -167,8 +167,10 @@ class Solution:
             if right == 1:
                 return
 
-            if right > 1:
-                right_node = right_node.next
+            right_node = right_node.next
+
+            if left > 1:
+                left_node = left_node.next
 
             recurse(right_node, left - 1, right - 1)
 
@@ -176,6 +178,10 @@ class Solution:
                 stop = True
 
             if not stop:
+                left_node.val, right_node.val = right_node.val, left_node.val
+                left_node = left_node.next
+        recurse(right_node, left, right)
+        return head
 
 
 
