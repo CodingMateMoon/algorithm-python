@@ -28,6 +28,11 @@ Output: [1,2,4]
 Explanation:
 The above figure represents the given linked list.
 For n = 4, node 2 with value 3 is the middle node, which is marked in red.
+
+Constraints:
+
+The number of nodes in the list is in the range [1, 105].
+1 <= Node.val <= 105
 """
 
 class Solution:
