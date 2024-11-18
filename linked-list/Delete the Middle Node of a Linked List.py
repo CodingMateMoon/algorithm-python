@@ -37,3 +37,9 @@ The number of nodes in the list is in the range [1, 105].
 
 class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        count = 0
+        cur = head
+        while cur:
+            count += 1
+            cur = cur.next
+
