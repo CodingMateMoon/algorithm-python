@@ -1,4 +1,6 @@
 #https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/
+import math
+
 
 # Definition for singly-linked list.
 class ListNode:
@@ -42,4 +44,15 @@ class Solution:
         while cur:
             count += 1
             cur = cur.next
+
+        middle_index = math.floor(count / 2)
+
+    def custom_print(self):
+        count = 7
+        middle_index = math.floor(count / 2)
+        print(f"middle_index : {middle_index}")
+
+def test_deleteMiddle():
+    solution = Solution()
+    solution.custom_print()
 
