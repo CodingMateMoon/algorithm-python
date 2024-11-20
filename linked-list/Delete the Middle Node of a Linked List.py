@@ -46,6 +46,9 @@ class Solution:
             cur = cur.next
 
         middle_index = math.floor(count / 2)
+        cur = head
+        while middle_index > 0:
+
 
     def custom_print(self):
         count = 7
