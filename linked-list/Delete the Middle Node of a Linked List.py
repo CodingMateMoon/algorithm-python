@@ -47,7 +47,14 @@ class Solution:
 
         middle_index = math.floor(count / 2)
         cur = head
-        while middle_index > 0:
+        while middle_index > 1:
+            cur = cur.next
+            middle_index -= 1
+
+        if cur.next.next:
+            cur.next = cur.next.next
+        return head
+
 
 
     def custom_print(self):
