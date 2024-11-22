@@ -53,6 +53,7 @@ class Solution:
 
         if cur.next.next:
             cur.next = cur.next.next
+        cur.next = None
         return head
 
 
