@@ -46,17 +46,17 @@ class Solution:
             cur = cur.next
 
         middle_index = math.floor(count / 2)
+        if middle_index == 0:
+            return None
         cur = head
         while middle_index > 1:
             cur = cur.next
             middle_index -= 1
-
-        if cur.next.next:
+        if cur.next and cur.next.next:
             cur.next = cur.next.next
-        cur.next = None
+        else:
+            cur.next = None
         return head
-
-
 
     def custom_print(self):
         count = 7
