@@ -61,6 +61,9 @@ class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if head.next == None:
             return None
+        count = 0
+        cur = middle_index = head
+
     def custom_print(self):
         count = 7
         middle_index = math.floor(count / 2)
