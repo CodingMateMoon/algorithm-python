@@ -62,7 +62,11 @@ class Solution:
         if head.next == None:
             return None
         count = 0
-        cur = middle_index = head
+        cur = middle_pointer = head
+
+        while cur:
+            count += 1
+            cur = cur.next
 
     def custom_print(self):
         count = 7
