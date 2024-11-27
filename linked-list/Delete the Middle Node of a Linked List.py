@@ -68,6 +68,8 @@ class Solution:
             count += 1
             cur = cur.next
 
+        middle_index = count // 2
+
     def custom_print(self):
         count = 7
         middle_index = math.floor(count / 2)
