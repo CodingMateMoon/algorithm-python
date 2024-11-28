@@ -70,6 +70,9 @@ class Solution:
 
         middle_index = count // 2
 
+        for _ in range(middle_index - 1):
+            middle_pointer = middle_pointer.next
+
     def custom_print(self):
         count = 7
         middle_index = math.floor(count / 2)
