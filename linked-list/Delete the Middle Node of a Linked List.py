@@ -72,6 +72,8 @@ class Solution:
 
         for _ in range(middle_index - 1):
             middle_pointer = middle_pointer.next
+        middle_pointer.next = middle_pointer.next.next
+        return head
 
     def custom_print(self):
         count = 7
