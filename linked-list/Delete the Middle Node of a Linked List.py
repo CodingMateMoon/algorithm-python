@@ -58,7 +58,7 @@ class Solution:
             cur.next = None
         return head
 
-    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def deleteMiddle_2(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if head.next == None:
             return None
         count = 0
@@ -74,6 +74,10 @@ class Solution:
             middle_pointer = middle_pointer.next
         middle_pointer.next = middle_pointer.next.next
         return head
+
+    def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head.next == None:
+            return None
 
     def custom_print(self):
         count = 7
