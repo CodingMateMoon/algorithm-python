@@ -81,6 +81,10 @@ class Solution:
 
         slow, fast = head, head.next.next
 
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
     def custom_print(self):
         count = 7
         middle_index = math.floor(count / 2)
