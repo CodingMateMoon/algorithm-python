@@ -79,6 +79,8 @@ class Solution:
         if head.next == None:
             return None
 
+        slow, fast = head, head.next.next
+
     def custom_print(self):
         count = 7
         middle_index = math.floor(count / 2)
