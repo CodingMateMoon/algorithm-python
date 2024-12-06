@@ -78,6 +78,7 @@ class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if head.next == None:
             return None
+        slow, fast = head, head.next.next
 
 
     def custom_print(self):
