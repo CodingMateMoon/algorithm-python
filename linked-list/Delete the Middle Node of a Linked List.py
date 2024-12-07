@@ -79,6 +79,9 @@ class Solution:
         if head.next == None:
             return None
         slow, fast = head, head.next.next
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
 
 
     def custom_print(self):
