@@ -9,6 +9,7 @@ class ListNode:
         self.next = next
 
 """
+뒤에서 n번째인 노드 제거
 Input: head = [1,2,3,4,5], n = 2
 Output: [1,2,3,5]
 Example 2:
@@ -29,3 +30,5 @@ The number of nodes in the list is sz.
 """
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        if head.next is None:
+            return None
