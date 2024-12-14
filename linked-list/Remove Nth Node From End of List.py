@@ -32,3 +32,7 @@ class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         if head.next is None:
             return None
+
+        cur, before_cur = head, head.next
+
+        while cur and cur.next:
