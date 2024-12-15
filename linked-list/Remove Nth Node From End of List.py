@@ -33,6 +33,8 @@ class Solution:
         if head.next is None:
             return None
 
-        cur, before_cur = head, head.next
+        cur, prev_cur = head, head.next
 
         while cur and cur.next:
+            cur = cur.next
+            prev_cur = prev_cur.next
