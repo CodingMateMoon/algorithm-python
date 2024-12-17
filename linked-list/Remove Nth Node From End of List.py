@@ -35,6 +35,8 @@ class Solution:
 
         cur, prev_cur = head, head.next
 
-        while cur and cur.next:
+        while prev_cur and prev_cur.next:
             cur = cur.next
             prev_cur = prev_cur.next
+
+
