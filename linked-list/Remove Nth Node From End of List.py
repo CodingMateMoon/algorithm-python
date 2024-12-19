@@ -11,6 +11,11 @@ class ListNode:
 """
 뒤에서 n번째인 노드 제거
 length 계산. length - n 만큼 이동 후 해당 노드 제거
+length : 5, n = 2
+5 - 2 = 3 (target)
+while target > 0
+    cur = cur.next
+    target -= 1
 
 Input: head = [1,2,3,4,5], n = 2
 Output: [1,2,3,5]
