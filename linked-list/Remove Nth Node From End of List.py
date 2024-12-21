@@ -28,6 +28,9 @@ Example 3:
 Input: head = [1,2], n = 1
 Output: [1]
 
+Input: head = [1,2], n = 2 
+Output: [2]
+
 Constraints:
 
 The number of nodes in the list is sz.
@@ -40,10 +43,24 @@ class Solution:
         if head.next is None:
             return None
 
-        cur, prev_cur = head, head.next
+        cur = head
+        length = 0
 
-        while prev_cur and prev_cur.next:
+        while cur:
             cur = cur.next
-            prev_cur = prev_cur.next
+            length += 1
+
+        cur = head
+        target_index = length - n
+
+        while target_index > 1:
+            cur = cur.next
+            target_index -= 1
+
+        cur.next = cur.next.next
+        return head
+
+
+
 
 
