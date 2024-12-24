@@ -57,7 +57,7 @@ class Solution:
             cur = cur.next
             target_index -= 1
 
-        cur.next = cur.next.next
+        cur = cur.next
         return head
 
 
