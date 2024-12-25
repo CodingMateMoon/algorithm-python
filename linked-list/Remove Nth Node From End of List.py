@@ -57,7 +57,11 @@ class Solution:
             cur = cur.next
             target_index -= 1
 
-        cur = cur.next
+        # length 2, n = 2인 경우
+        if target_index == 0:
+            return head.next
+
+        cur.next = cur.next.next
         return head
 
 
