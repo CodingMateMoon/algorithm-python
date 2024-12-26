@@ -39,7 +39,7 @@ The number of nodes in the list is sz.
 1 <= n <= sz
 """
 class Solution:
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def removeNthFromEnd_1(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         if head.next is None:
             return None
 
@@ -63,6 +63,8 @@ class Solution:
 
         cur.next = cur.next.next
         return head
+    
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
 
 
 
