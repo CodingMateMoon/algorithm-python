@@ -68,6 +68,7 @@ class Solution:
         dummy = ListNode(0)
         dummy.next = head
         length = 0
+        first = head
 
 
 
