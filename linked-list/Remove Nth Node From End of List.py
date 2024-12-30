@@ -70,6 +70,10 @@ class Solution:
         length = 0
         first = head
 
+        while first:
+            first = first.next
+            length += 1
+
 
 
 
