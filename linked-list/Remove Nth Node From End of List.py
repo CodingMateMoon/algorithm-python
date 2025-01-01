@@ -65,7 +65,7 @@ class Solution:
     1 <= n <= sz
     """
 
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def removeNthFromEnd_1(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         dummy = ListNode(0)
         dummy.next = head
         length = 0
@@ -83,6 +83,21 @@ class Solution:
             length -= 1
             first = first.next
         first.next = first.next.next
+        return dummy.next
+
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        dummy = ListNode(0)
+        dummy.next = head
+        first = dummy
+        second = dummy
+
+        for _ in range(n + 1):
+            first = first.next
+
+        while first:
+            first = first.next
+            second = second.next
+        second.next = second.next.next
         return dummy.next
 
 
